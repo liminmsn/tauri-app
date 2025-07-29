@@ -1,11 +1,15 @@
-<script setup lang="ts"></script>
 
 <template>
-  <a-app>
+  <App>
     <TitleBar/>
     <RouterView />
-  </a-app>
+  </App>
 </template>
+
+<script setup lang="ts">
+import { App } from 'ant-design-vue';
+import TitleBar from './components/TitleBar.vue';
+</script>
 
 <style>
 :root {
@@ -30,15 +34,6 @@
 
   a:hover {
     color: #24c8db;
-  }
-
-  input,
-  button {
-    color: #ffffff;
-    background-color: #0f0f0f98;
-  }
-  button:active {
-    background-color: #0f0f0f69;
   }
 }
 
