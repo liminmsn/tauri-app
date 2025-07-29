@@ -12,7 +12,8 @@
   "app": {
     "windows": [
       {
-        "title": "tauri-app",
+        "title": "可视化大屏",
+        "decorations": false,
         "width": 800,
         "height": 600
       }

@@ -1,5 +1,7 @@
 <template>
-    <div class="w-10 bg-red"></div>
+    <div class="title_bar">
+        <a-button>hello</a-button>
+    </div>
 </template>
 
 <script setup lang="ts"></script>
