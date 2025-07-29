@@ -7,7 +7,6 @@
 </template>
 
 <style>
-@import "tailwindcss";
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
