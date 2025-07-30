@@ -828,6 +828,11 @@ alien-signals@^1.0.3:
   resolved "https://registry.yarnpkg.com/alien-signals/-/alien-signals-1.0.13.tgz#8d6db73462f742ee6b89671fbd8c37d0b1727a7e"
   integrity sha512-OGj9yyTnJEttvzhTUWuscOvtqxq5vrhF7vL9oS0xJ2mK0ItPYP1/y+vCFebfxoEyAz0++1AIwJ5CMr+Fk3nDmg==
 
+animejs@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/animejs/-/animejs-4.1.2.tgz#7e3af87c767d4f5ce7eeaee5d28cd4e38d94e2ef"
+  integrity sha512-QojQzHzN4ZCOGk4Seir5CWPHGKFPpMAsen3KEj/BHsIKDceH0xKd3FBWflyKiNefKG2fn3+ofpY9jD/UXhpY6A==
+
 ant-design-vue@4.x:
   version "4.2.6"
   resolved "https://registry.yarnpkg.com/ant-design-vue/-/ant-design-vue-4.2.6.tgz#e4ce6944457cd1cd61d8b3fe52793ab58b94e337"
@@ -1287,7 +1292,7 @@ pkg-types@^2.0.1:
     exsolve "^1.0.7"
     pathe "^2.0.3"
 
-postcss@^8.5.6:
+postcss@^8.4.21, postcss@^8.5.6:
   version "8.5.6"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.5.6.tgz#2825006615a619b4f62a9e7426cc120b349a8f3c"
   integrity sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==
@@ -1402,6 +1407,11 @@ totalist@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/totalist/-/totalist-3.0.1.tgz#ba3a3d600c915b1a97872348f79c127475f6acf8"
   integrity sha512-sf4i37nQ2LBx4m3wB74y+ubopq6W/dIzXg0FDGjsYnZHVa1Da8FH853wlL2gtUhg+xJXjfk3kUZS3BRoQeoQBQ==
+
+typescript@^5.8.3:
+  version "5.8.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.8.3.tgz#92f8a3e5e3cf497356f4178c34cd65a7f5e8440e"
+  integrity sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==
 
 ufo@^1.5.4:
   version "1.6.1"
