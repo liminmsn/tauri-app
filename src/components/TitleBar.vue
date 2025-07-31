@@ -1,5 +1,5 @@
 <template>
-    <Card class="title_bar flex justify-between !p-1">
+    <Card class="title_bar flex justify-between !p-1 bg-mk">
         <div class="w-100 flex-1 pl-1">
             搜书
         </div>
@@ -7,10 +7,10 @@
             <Button type="default" size="small" shape="default" @click="bnt_click(0)">
                 <MinusOutlined />
             </Button>
-            <Button type="default" size="small" shape="default" @click="bnt_click(1)">
+            <!-- <Button type="default" size="small" shape="default" @click="bnt_click(1)">
                 <FullscreenOutlined v-if="isFullScreen" />
                 <FullscreenExitOutlined v-else />
-            </Button>
+            </Button> -->
             <Button type="primary" size="small" shape="default" danger @click="bnt_click(2)">
                 <CloseOutlined />
             </Button>
