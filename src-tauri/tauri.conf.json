@@ -14,7 +14,9 @@
       {
         "title": "可视化大屏",
         "decorations": false,
-        "transparent": false,
+        "transparent": true,
+        "resizable": false,
+        "shadow": false,
         "width": 800,
         "height": 600
       }
