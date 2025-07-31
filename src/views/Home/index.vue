@@ -9,11 +9,13 @@
 import { ref } from "vue";
 import { Button } from "ant-design-vue";
 import { fetch } from '@tauri-apps/plugin-http';
-function open() {
-  fetch("https://www2.jiumodiary.com/init_hubs.php", {
-    method: 'POST',
-    body:null
-  })
+async function open() {
+  const res = await fetch("https://www.jiumodiary.com/init_hubs.php", {
+    method: "POST",
+    body: `q=小草&remote_ip=&time_int=${Date.now()}`
+  });
+  console.log(await res.text());
+  
 }
 </script>
 
