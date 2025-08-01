@@ -3,8 +3,7 @@ import { ClientOptions, fetch } from "@tauri-apps/plugin-http";
 export class NetBase {
     static baseUrl = "https://www.jiumodiary.com";
     private init: RequestInit & ClientOptions;
-    constructor(private url: string) {
-        this.url = NetBase.baseUrl + this.url;
+    constructor() {
         // 初始化请求配置
         this.init = {
             headers: {
@@ -30,8 +29,9 @@ export class NetBase {
         this.init.body = body;
         return this;
     }
-    send(callback?: (response: Response) => void) {
-        fetch(this.url, this.init).then(callback).catch((error) => {
+    send(url: string, callback: (response: Response) => void) {
+        const url_ = NetBase.baseUrl + url;
+        fetch(url_, this.init).then(callback).catch((error) => {
             console.error("Network request failed:", error);
         });
         return this;
