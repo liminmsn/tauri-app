@@ -1,16 +1,15 @@
 <template>
   <div class="w-full h-full flex pt-1">
     <Card class="card_0 p-2 bg-mk">
-      <Card class="mb-2 w-60 h-10" size="small">
+      <Card class="mb-2 w-40 h-10" size="small">
       </Card>
       <Button type="primary" @click="search_()">GO</Button>
     </Card>
     <Card class="card_1 flex-1 ml-1 p-1 bg-mk overflow-y-auto">
-      <Flex>
-        <Card size="small" v-for="item in dataArr" :key="item.info">
-          <template #title>
-            {{ item.details }}
-          </template>
+      <Flex wrap="wrap" align="center" gap="2">
+        <Card class="w-30 h-40 text-wrap overflow-hidden bg-book" size="small" v-for="item in dataArr" :key="item.info">
+          <!-- {{ item.details.data[0].title }} -->
+          {{ item.details.data[0] }}
         </Card>
       </Flex>
     </Card>
