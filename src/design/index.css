@@ -1,4 +1,5 @@
 @import url('./ant/card.css');
+
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -12,9 +13,12 @@
   -webkit-text-size-adjust: 100%;
 }
 
-.bg-mk{
-  /* background-color: rgba(0, 0, 0, 0.2); */
-  backdrop-filter: blur(10px) !important;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(2px);
+.bg-mk {
+  color: white;
+  /* background-color: #1ca8353f; */
+}
+
+.bg_svg {
+  background: url('/bg.svg');
+  background-size: 100% 100%;
 }
