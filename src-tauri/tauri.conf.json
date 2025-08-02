@@ -13,7 +13,7 @@
     "windows": [
       {
         "title": "可视化大屏",
-        "decorations": false,
+        "decorations": true,
         "transparent": true,
         "resizable": false,
         "shadow": false,
