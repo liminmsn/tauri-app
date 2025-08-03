@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "可视化大屏",
+        "title": "全网找书",
         "decorations": true,
         "transparent": true,
         "resizable": false,

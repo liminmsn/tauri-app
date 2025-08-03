@@ -3,7 +3,7 @@
         <a :href="item.details.data[0].link" target="_blank">
             <div class="book_center">
                 <div class="book text-center pb-2 flex flex-col justify-between">
-                    <div class="w-full h-14  text-black overflow-hidden p-2 bg-white" style="font-size: 8pt;line-height: 1.2;font-family: 'sys'">
+                    <div class="w-full h-14  text-black overflow-hidden p-2 bg-white" style="font-size: 8pt;line-height: 1.2;">
                         {{ item.details.data[0].title }}
                     </div>
                     <span class="text-white font-bold" style="font-size: 5pt;">

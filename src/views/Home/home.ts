@@ -3,14 +3,14 @@ import { ref } from "vue";
 
 export const home = {
     label: ref(''),
-    labelHistory: ref<string[]>(['西游记', '道德经']),
+    labelHistory: ref<string[]>(['JavaScript权威指南', '西游记', '道德经']),
     dataArr: ref<Source[]>([]),
     loding: ref(false),
     search_(query?: string) {
         if (query) {
             home.label.value = query;
         }
-        if(!home.label.value) return;
+        if (!home.label.value) return;
         home.dataArr.value = [];
         home.loding.value = true;
         search(home.label.value).then(val => {
@@ -24,7 +24,7 @@ export const home = {
     delLabelHistory(labal: string) {
         if (home.labelHistory.value.includes(labal)) {
             const idx = home.labelHistory.value.indexOf(labal);
-            home.labelHistory.value.splice(idx, idx + 1);
+            home.labelHistory.value.splice(idx,1);
         }
     }
 }
