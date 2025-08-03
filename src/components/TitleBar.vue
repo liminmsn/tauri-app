@@ -1,7 +1,7 @@
 <template>
     <Card class="title_bar flex justify-between !p-1 bg-mk bg_svg">
         <div class="w-100 flex-1 pl-1">
-            搜书
+            全网找书
         </div>
         <div class="title_bar_items flex gap-1">
             <Button type="default" size="small" shape="default" @click="bnt_click(0)">

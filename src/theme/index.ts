@@ -4,6 +4,10 @@ import { ThemeConfig } from "ant-design-vue/es/config-provider/context";
 export const theme_main: ThemeConfig = {
     algorithm: theme.defaultAlgorithm,
     token: {
-        colorPrimary: '#a0d911',
+        // colorPrimary: '#8AA624',
     }
+}
+
+export function rdmColor() {
+    return '#' + Math.floor(Math.random() * 0x999999).toString(16).padStart(6, '0');
 }

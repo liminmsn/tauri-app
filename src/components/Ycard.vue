@@ -1,12 +1,12 @@
 <template>
-    <div class="book_card">
+    <div class="book_card" :style="{ '--color': rdmColor() }">
         <a :href="item.details.data[0].link" target="_blank">
             <div class="book_center">
-                <div class="book text-center p-2 flex flex-col justify-between">
-                    <div class="w-full h-10 bg-white text-black overflow-hidden p-1" style="font-size: 8pt;">
+                <div class="book text-center pb-2 flex flex-col justify-between">
+                    <div class="w-full h-14  text-black overflow-hidden p-2 bg-white" style="font-size: 8pt;line-height: 1.2;font-family: 'sys'">
                         {{ item.details.data[0].title }}
                     </div>
-                    <span class="text-black font-bold" style="font-size: 5pt;">
+                    <span class="text-white font-bold" style="font-size: 5pt;">
                         {{ item.details.data[0].rate_summary }}
                     </span>
                 </div>
@@ -18,6 +18,7 @@
 </template>
 <script setup lang="ts">
 import { Source } from '@/api/Search';
+import { rdmColor } from '@/theme';
 const { item } = defineProps<{ item: Source }>();
 </script>
 
@@ -26,7 +27,7 @@ const { item } = defineProps<{ item: Source }>();
     perspective: 600px;
     position: relative;
     --h: 18;
-    --color: yellowgreen;
+    /* --color: yellowgreen; */
     --color_1: rgb(241, 241, 241);
     --height: 150px;
 }
@@ -49,6 +50,7 @@ const { item } = defineProps<{ item: Source }>();
 .book {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+    overflow: hidden;
     position: absolute;
     width: inherit;
     height: inherit;
