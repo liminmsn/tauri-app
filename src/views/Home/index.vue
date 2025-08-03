@@ -17,14 +17,14 @@ import Right from './right.vue';
 
 <style scoped>
 .card_0 {
-  border-top-right-radius: 0;
-  border-top-left-radius: 0;
-  border-bottom-right-radius: 0;
+  /* border-top-left-radius: 0; */
+  /* border-top-right-radius: 0; */
+  /* border-bottom-right-radius: 0; */
 }
 
 .card_1 {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 0;
+  /* border-top-right-radius: 0; */
+  /* border-top-left-radius: 0; */
+  /* border-bottom-left-radius: 0; */
 }
 </style>

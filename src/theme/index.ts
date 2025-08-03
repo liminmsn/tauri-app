@@ -2,7 +2,7 @@ import { theme } from "ant-design-vue";
 import { ThemeConfig } from "ant-design-vue/es/config-provider/context";
 
 export const theme_main: ThemeConfig = {
-    algorithm: theme.defaultAlgorithm,
+    algorithm: theme.compactAlgorithm,
     token: {
         // colorPrimary: '#8AA624',
     }

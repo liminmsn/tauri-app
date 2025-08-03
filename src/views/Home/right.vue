@@ -3,8 +3,8 @@
         <Ycard v-for="(item, index) in dataArr" :key="index" :item="item" class="w-30" />
     </Flex>
     <div class="w-full text-center">
-        <Spin class="mt-20" v-if="loding" />
-        <Empty class="mt-40" v-if="dataArr.length === 0 && loding == false" description=""
+        <Spin class="mt-20" v-if="loding" tip="正在查询" />
+        <Empty class="mt-40" v-if="dataArr.length === 0 && loding == false" description="学海无涯苦作帆？"
             :image="Empty.PRESENTED_IMAGE_SIMPLE" />
     </div>
 </template>

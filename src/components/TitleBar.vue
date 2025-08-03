@@ -53,8 +53,8 @@ onMounted(() => {
 }
 
 .ant-card {
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+    /* border-bottom-right-radius: 0; */
+    /* border-bottom-left-radius: 0; */
 }
 
 :deep(.ant-card-body) {
