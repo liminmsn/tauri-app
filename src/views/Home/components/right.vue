@@ -1,6 +1,6 @@
 <template>
     <Flex wrap="wrap" gap="20" justify="start" align="start">
-        <Ycard v-for="(item, index) in dataArr" :key="index" :item="item" class="w-30" />
+        <Book v-for="(item, index) in dataArr" :key="index" :item="item" class="w-30" />
     </Flex>
     <div class="w-full text-center">
         <Spin class="mt-20" v-if="loding" tip="正在全网搜索" />
@@ -10,7 +10,7 @@
 </template>
 <script setup lang="ts">
 import { Empty, Flex, Spin } from "ant-design-vue";
-import Ycard from "@/components/Ycard.vue";
 import { home } from "../home";
+import Book from "@/components/Book.vue";
 const { loding, dataArr } = home;
 </script>

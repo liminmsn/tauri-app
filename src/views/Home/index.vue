@@ -1,6 +1,6 @@
 <template>
   <div class="w-full h-full flex pt-1">
-    <Card class="card_0 w3/12 p-2 text-right bg-mk">
+    <Card class="card_0 w3/12 p-2 text-right">
       <Left />
     </Card>
     <Card class="card_1 flex-1 ml-1 pl-6 py-4 bg-mk overflow-y-auto">

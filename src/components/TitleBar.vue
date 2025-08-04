@@ -1,5 +1,5 @@
 <template>
-    <Card class="title_bar flex justify-between !p-1 bg-mk bg_svg">
+    <Card class="title_bar flex justify-between !p-1">
         <div class="w-100 flex-1 pl-1">
             全网找书
         </div>
