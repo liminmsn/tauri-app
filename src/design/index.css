@@ -12,6 +12,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  ::-webkit-scrollbar{
+    appearance: none;
+    width: 0;
+  }
 }
 
 .bg-mk {

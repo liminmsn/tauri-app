@@ -13,7 +13,7 @@
     "windows": [
       {
         "title": "全网找书",
-        "decorations": true,
+        "decorations": false,
         "transparent": true,
         "resizable": false,
         "shadow": false,

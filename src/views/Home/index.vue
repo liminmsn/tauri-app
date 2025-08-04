@@ -11,8 +11,8 @@
 
 <script setup lang="ts">
 import { Card } from 'ant-design-vue';
-import Left from "./left.vue";
-import Right from './right.vue';
+import Left from './components/left.vue';
+import Right from './components/right.vue';
 </script>
 
 <style scoped>

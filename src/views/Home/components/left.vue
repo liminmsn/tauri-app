@@ -18,6 +18,6 @@
 <script setup lang="ts">
 import { Button, Tag, Input, List } from 'ant-design-vue';
 import { CloseCircleOutlined } from '@ant-design/icons-vue';
-import { home } from './home'
+import { home } from '../home'
 const { label, search_, labelHistory } = home;
 </script>
