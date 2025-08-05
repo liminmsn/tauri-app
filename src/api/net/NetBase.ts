@@ -1,7 +1,7 @@
 import { ClientOptions, fetch } from "@tauri-apps/plugin-http";
 
 export class NetBase {
-    static baseUrl = "https://www.jiumodiary.com";
+    static baseUrl = import.meta.env.VITE_SERVER_URL;
     private init: RequestInit & ClientOptions;
     constructor() {
         // 初始化请求配置
