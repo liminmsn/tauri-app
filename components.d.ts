@@ -9,10 +9,8 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Book: typeof import('./src/components/Book.vue')['default']
-    BookCard: typeof import('./src/components/BookCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TitleBar: typeof import('./src/components/TitleBar.vue')['default']
-    Ycard: typeof import('./src/components/Ycard.vue')['default']
   }
 }

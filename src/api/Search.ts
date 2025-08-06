@@ -3,7 +3,7 @@ import { NetBase } from "./net/NetBase";
 
 export function search(query: string) {
     const net = new NetBase();
-    return new Promise<SearchResultData | null>((resolve, reject) => {
+    return new Promise<SearchResultData | null>((resolve, _reject) => {
         net.post(`q=${query}&remote_ip=&time_int=${Date.now()}`);
         net.send("/init_hubs.php", res => res.json().then((data: SearchResult) => {
             net.post(`id=${data.id}&set=${data.count}`);

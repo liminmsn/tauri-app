@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { MinusOutlined, FullscreenExitOutlined, FullscreenOutlined, CloseOutlined } from '@ant-design/icons-vue';
+import { MinusOutlined, CloseOutlined } from '@ant-design/icons-vue';
 import { Window } from '@tauri-apps/api/window';
 import { Button, Card } from 'ant-design-vue';
 import { onMounted, ref } from 'vue';
