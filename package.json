@@ -4,11 +4,12 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "tauri dev": "tauri dev",
+    "tauri build": "tauri build",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "dev": "vite"
   },
   "dependencies": {
     "@ant-design/icons-vue": "^7.0.1",

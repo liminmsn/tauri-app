@@ -4142,18 +4142,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "tauriapp"
-version = "0.1.0"
-dependencies = [
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
- "tauri-plugin-http",
- "tauri-plugin-opener",
-]
-
-[[package]]
 name = "tempfile"
 version = "3.20.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -5636,4 +5624,16 @@ dependencies = [
  "static_assertions",
  "syn 2.0.104",
  "winnow 0.7.12",
+]
+
+[[package]]
+name = "全网找书"
+version = "1.1.0"
+dependencies = [
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
+ "tauri-plugin-http",
+ "tauri-plugin-opener",
 ]
