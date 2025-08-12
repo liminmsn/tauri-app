@@ -8,14 +8,9 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { Button } from "ant-design-vue";
-import { fetch } from '@tauri-apps/plugin-http';
+import { NetBase } from "@/net/NetBase";
 async function open() {
-  const res = await fetch("https://www.jiumodiary.com/init_hubs.php", {
-    method: "POST",
-    body: `q=小草&remote_ip=&time_int=${Date.now()}`
-  });
-  console.log(await res.text());
-  
+  new NetBase()
 }
 </script>
 
