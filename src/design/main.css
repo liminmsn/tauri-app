@@ -1,9 +1,10 @@
 @import url('./var.css');
 @import url('./ant/btn.css');
 @import url('./ant/card.css');
+@import url('./ant/input.css');
 #app{
     height: 100vh;
-    background-color: transparent;
+    background-color: var(--VITE_THEME_ONE_BG);
 }
 .ant-app{
     height: 100%;

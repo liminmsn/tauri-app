@@ -12,9 +12,10 @@
   "app": {
     "windows": [
       {
-        "title": "网页请求测试工具",
+        "title": "网页数据抓取工具",
         "decorations": false,
         "transparent": true,
+        "resizable": false,
         "width": 800,
         "height": 600
       }

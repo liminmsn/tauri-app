@@ -1,9 +1,11 @@
-
 <template>
-  <ConfigProvider
-    :theme="theme_main">
+  <ConfigProvider :theme="theme_main">
     <App>
-      <TitleBar/>
+      <TitleBar>
+        <template #title_end_element>
+          <YInput />
+        </template>
+      </TitleBar>
       <RouterView />
     </App>
   </ConfigProvider>
@@ -11,8 +13,7 @@
 
 <script setup lang="ts">
 import { App, ConfigProvider } from 'ant-design-vue';
-import TitleBar from './components/TitleBar.vue';
 import { theme_main } from './theme';
+import TitleBar from './components/TitleBar.vue';
+import YInput from './components/YInput.vue';
 </script>
-
-<style></style>
