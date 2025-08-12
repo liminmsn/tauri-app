@@ -1,6 +1,9 @@
+@import url('./var.css');
 @import url('./ant/btn.css');
+@import url('./ant/card.css');
 #app{
     height: 100vh;
+    background-color: transparent;
 }
 .ant-app{
     height: 100%;

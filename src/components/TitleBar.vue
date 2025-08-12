@@ -1,15 +1,17 @@
 <template>
-    <div class="title_bar flex pt-1 px-1">
-        <div class="w-100 flex-1"></div>
-        <div class="title_bar_items flex gap-1">
-            <Button type="default" size="small" shape="default" @click="bnt_click(0)">
+    <div class="title_bar flex p-2 pb-0">
+        <div class="shadow-md rounded-md bg-white w8/10">
+            <span class="font-bold ml-2">{{ title }}</span>
+        </div>
+        <div class="w2/10 text-right">
+            <Button class="shadow-md mr-1" type="default" size="small" shape="default" @click="bnt_click(0)">
                 <MinusOutlined />
             </Button>
-            <Button type="default" size="small" shape="default" @click="bnt_click(1)">
+            <Button class="shadow-md mr-1" type="default" size="small" shape="default" @click="bnt_click(1)">
                 <FullscreenOutlined v-if="isFullScreen" />
                 <FullscreenExitOutlined v-else />
             </Button>
-            <Button type="primary" size="small" shape="default" danger @click="bnt_click(2)">
+            <Button class="shadow-md" type="primary" size="small" shape="default" @click="bnt_click(2)">
                 <CloseOutlined />
             </Button>
         </div>
@@ -19,8 +21,9 @@
 <script setup lang="ts">
 import { MinusOutlined, FullscreenExitOutlined, FullscreenOutlined, CloseOutlined } from '@ant-design/icons-vue';
 import { Window } from '@tauri-apps/api/window';
-import { Button } from 'ant-design-vue';
+import { Button, Card } from 'ant-design-vue';
 import { onMounted, ref } from 'vue';
+const title = import.meta.env['VITE_TITLE'];
 const isFullScreen = ref(true);
 const appWindow = Window.getCurrent();
 async function bnt_click(key: 0 | 1 | 2) {
@@ -40,7 +43,7 @@ async function bnt_click(key: 0 | 1 | 2) {
 }
 
 onMounted(() => {
-    
+
 })
 </script>
 
@@ -56,5 +59,9 @@ onMounted(() => {
 
 .title_bar_items {
     -webkit-app-region: no-drag;
+}
+
+:deep(.ant-card-body) {
+    padding: 0 !important;
 }
 </style>

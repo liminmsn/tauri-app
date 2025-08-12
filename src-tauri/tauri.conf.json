@@ -12,9 +12,9 @@
   "app": {
     "windows": [
       {
-        "title": "可视化大屏",
+        "title": "网页请求测试工具",
         "decorations": false,
-        "transparent": false,
+        "transparent": true,
         "width": 800,
         "height": 600
       }
