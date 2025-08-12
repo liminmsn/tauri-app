@@ -1,0 +1,7 @@
+@import url('./ant/btn.css');
+#app{
+    height: 100vh;
+}
+.ant-app{
+    height: 100%;
+}
