@@ -5,7 +5,7 @@ export class NetBase {
     private body?: BodyInit;
     private header = {}
     constructor(url = '') {
-        this.url.concat(url)
+        this.url += url;
     }
     /**
      * @param args 示范:'&name=a&age=25'
@@ -14,7 +14,7 @@ export class NetBase {
     get(argument?: string): NetBase {
         this.method = 'GET';
         if (argument) {
-            this.url.concat(argument);
+            this.url += argument;
         }
         return this;
     }
