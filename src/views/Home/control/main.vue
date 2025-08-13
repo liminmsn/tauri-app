@@ -1,7 +1,9 @@
 <template>
     <Card class="main flex-1 ml-1 overflow-y-auto shadow-md">
         <a-watermark class="h-full" content="Ant Design Vue">
-            <a-spin v-if="isLod" />
+            <div class="w-full h-full text-center" v-if="isLod">
+                <a-spin class="mt-50"/>
+            </div>
             <template v-else-if="domData">
                 <div v-if="current[0] == 'text'">{{ domData }}</div>
                 <iframe v-else-if="current[0] == 'html'" :srcdoc="domData" />
@@ -37,7 +39,8 @@ iframe {
     height: 100%;
     border: none;
 }
-:deep(.ant-card-body){
+
+:deep(.ant-card-body) {
     padding: 0 !important;
 }
 </style>
