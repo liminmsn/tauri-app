@@ -1,4 +1,5 @@
 .ant-card-body{
     padding: 4px !important;
     padding-inline: 8px !important;
+    height: 100%;
 }

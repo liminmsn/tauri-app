@@ -9,7 +9,13 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AButton: typeof import('ant-design-vue/es')['Button']
+    ACalendar: typeof import('ant-design-vue/es')['Calendar']
+    AEmpty: typeof import('ant-design-vue/es')['Empty']
     AInputSearch: typeof import('ant-design-vue/es')['InputSearch']
+    AMenu: typeof import('ant-design-vue/es')['Menu']
+    ASegmented: typeof import('ant-design-vue/es')['Segmented']
+    ASpin: typeof import('ant-design-vue/es')['Spin']
+    AWatermark: typeof import('ant-design-vue/es')['Watermark']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TitleBar: typeof import('./src/components/TitleBar.vue')['default']

@@ -1,18 +1,29 @@
 <template>
-  <InputSearch class="shadow-md bg-transparent rounded-md w-100" size="small" v-model:value="value"
-    placeholder="https://* || http://*" :enter-button="customIcon" @search="onSearch">
+  <InputSearch class="shadow-md bg-transparent w-100" size="small" v-model:value="value"
+    placeholder="https://* || http://* || www.*" :enter-button="customIcon" @search="onSearch">
   </InputSearch>
 </template>
 <script setup lang="ts">
+import { GlobalEvent } from '@/event/GlobalEvent';
+import { isValidUrl } from '@/utility/Reg';
 import { SendOutlined } from '@ant-design/icons-vue';
-import { InputSearch } from 'ant-design-vue';
+import { InputSearch, message } from 'ant-design-vue';
 import { h, ref } from 'vue';
 const value = ref<string>('');
 const customIcon = h(SendOutlined);
 
 const onSearch = (searchValue: string) => {
-  console.log('use value', searchValue);
-  console.log('or use this.value', value.value);
+  if (isValidUrl(searchValue)) {
+    GlobalEvent.dispatch('y_input', { searchValue, value: value.value });
+  } else {
+    message.warn({
+      content: () => '请输入有效的 http 或 https 网页链接地址',
+      duration: 0.5,
+      style: {
+        scale: 0.9
+      }
+    });
+  }
 };
 </script>
 <style scoped></style>

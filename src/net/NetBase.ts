@@ -1,4 +1,5 @@
 import { fetch } from '@tauri-apps/plugin-http';
+
 export class NetBase {
     private url: string = import.meta.env['VITE_URL']
     private method: 'GET' | 'POST' = 'GET';
@@ -6,6 +7,9 @@ export class NetBase {
     private header = {}
     constructor(url = '') {
         this.url += url;
+    }
+    setUrl(url: string) {
+        this.url = url;
     }
     /**
      * @param args 示范:'&name=a&age=25'
@@ -27,8 +31,9 @@ export class NetBase {
         this.body = body;
         return this;
     }
-    async then(): Promise<Response> {
-        const res = await fetch(this.url, { headers: this.header, method: this.method, body: this.body });
-        return res;
+    send(fun: (value: Response) => void) {
+        fetch(this.url, { headers: this.header, method: this.method, body: this.body }).then(fun, (reason: any) => {
+            alert(reason);
+        });
     }
 }

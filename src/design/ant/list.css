@@ -1,0 +1,5 @@
+.ant-list-item {
+    padding: 4px !important;
+    user-select: none;
+    cursor: pointer;
+}

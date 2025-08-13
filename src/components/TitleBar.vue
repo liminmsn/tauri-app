@@ -1,8 +1,9 @@
 <template>
-    <div class="flex p-2 pb-0">
-        <div class="title_bar flex-1 shadow-md bg-white rounded-md px-1 mr-1 flex justify-between"
+    <div class="flex p-1 pb-0">
+        <div class="title_bar flex-1 shadow-md bg-white rounded-md px-1 mr-1"
             :style="{ color: theme_one }">
-            <span class="font-400">{{ title }}</span>
+            <span class="font-400 pl-2 pr-1">{{ title }}</span>
+            <CompassOutlined />
         </div>
         <div class="mr-1">
             <slot name="title_end_element" />
@@ -23,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { MinusOutlined, FullscreenExitOutlined, FullscreenOutlined, CloseOutlined } from '@ant-design/icons-vue';
+import { MinusOutlined, CompassOutlined, FullscreenExitOutlined, FullscreenOutlined, CloseOutlined } from '@ant-design/icons-vue';
 import { Window } from '@tauri-apps/api/window';
 import { Button, Space } from 'ant-design-vue';
 import { onMounted, ref } from 'vue';
