@@ -1,5 +1,5 @@
 <template>
-  <ConfigProvider :theme="theme_main">
+  <ConfigProvider :theme="theme_main" :locale="zhCN">
     <App>
       <Title_bar>
         <template #title_end_element>
@@ -16,4 +16,11 @@ import { App, ConfigProvider } from 'ant-design-vue';
 import { theme_main } from './theme';
 import Title_bar from './components/title_bar.vue';
 import Y_input from './components/y_input.vue';
+import { onMounted } from 'vue';
+import { SearchHistory } from './views/Home/script';
+import zhCN from 'ant-design-vue/es/locale/zh_CN';
+
+onMounted(() => {
+  SearchHistory.getHistory();
+})
 </script>

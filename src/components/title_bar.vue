@@ -5,7 +5,9 @@
             <span class="pl-2" :style="{ color: theme_one }">{{ title }}</span>
         </Y_card>
         <Button class="shadow-md mx-1" size="small" shape="default">
-            <QuestionCircleOutlined />
+            <Title_bar_history>
+                <HistoryOutlined />
+            </Title_bar_history>
         </Button>
         <div class="!w-full flex-1 shadow-md rounded-md">
             <slot name="title_end_element" />
@@ -27,11 +29,12 @@
 </template>
 
 <script setup lang="ts">
-import { MinusOutlined, FullscreenExitOutlined, FullscreenOutlined, CloseOutlined, QuestionCircleOutlined } from '@ant-design/icons-vue';
+import { MinusOutlined, FullscreenExitOutlined, FullscreenOutlined, CloseOutlined, HistoryOutlined } from '@ant-design/icons-vue';
 import { Window } from '@tauri-apps/api/window';
 import { Button, Space } from 'ant-design-vue';
 import { ref } from 'vue';
 import Y_card from './y_card.vue';
+import Title_bar_history from './title_bar_history.vue';
 const title = import.meta.env['VITE_TITLE'];
 const theme_one = import.meta.env['VITE_THEME_ONE'];
 
