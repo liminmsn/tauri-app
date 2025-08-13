@@ -8,9 +8,12 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    ABackTop: typeof import('ant-design-vue/es')['BackTop']
     AButton: typeof import('ant-design-vue/es')['Button']
     ACalendar: typeof import('ant-design-vue/es')['Calendar']
     AEmpty: typeof import('ant-design-vue/es')['Empty']
+    AFloatButton: typeof import('ant-design-vue/es')['FloatButton']
+    AFloatButtonGroup: typeof import('ant-design-vue/es')['FloatButtonGroup']
     AInput: typeof import('ant-design-vue/es')['Input']
     AInputGroup: typeof import('ant-design-vue/es')['InputGroup']
     AInputSearch: typeof import('ant-design-vue/es')['InputSearch']

@@ -1,11 +1,13 @@
 <template>
-    <Popover placement="bottomLeft" trigger="click">
+    <Popover placement="bottomLeft" trigger="hover">
         <template #content>
             <list class="min-w-60" size="small" :data-source="SearchHistory.history">
                 <template #renderItem="{ item }">
                     <list-item>
-                        <tag color="cyan">{{ item }}</tag>
+                        <tag @click="onClick(item)">{{ item }}</tag>
                         <template #actions>
+                            <Button size="small" type="link" danger :icon="h(MinusCircleOutlined)"
+                                @click="SearchHistory.delete(item)" />
                         </template>
                     </list-item>
                 </template>
@@ -16,6 +18,13 @@
 </template>
 
 <script setup lang="ts">
+import { GlobalEvent } from '@/event/GlobalEvent';
 import { SearchHistory } from '@/views/Home/script';
-import { List, ListItem, Popover, Tag } from 'ant-design-vue';
+import { MinusCircleOutlined } from '@ant-design/icons-vue';
+import { Button, List, ListItem, Popover, Tag } from 'ant-design-vue';
+import { h } from 'vue';
+
+function onClick(item: string) {
+    GlobalEvent.dispatch('y_input', { searchValue: item });
+}
 </script>

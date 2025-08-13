@@ -3,6 +3,7 @@
 @import url('./ant/card.css');
 @import url('./ant/input.css');
 @import url('./ant/list.css');
+@import url('./ant/popover-inner.css');
 #app{
     height: 100vh;
     background-color: var(--VITE_THEME_ONE_BG);

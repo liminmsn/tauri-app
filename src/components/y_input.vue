@@ -1,5 +1,5 @@
 <template>
-  <InputSearch size="small" v-model:value="value" placeholder="https://* || http://* || www.*"
+  <InputSearch size="small" v-model:value="value" placeholder="https://* || http://*"
     :enter-button="customIcon" @search="onSearch">
   </InputSearch>
 </template>

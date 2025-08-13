@@ -9,6 +9,7 @@ export class HomeNet extends NetBase {
     async getData(): Promise<string> {
         return new Promise(async (res) => {
             this.send(response => {
+                console.log(response);
                 res(response.text());
             })
         })
