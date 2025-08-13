@@ -1,6 +1,6 @@
 <template>
     <Card class="main flex-1 ml-1 overflow-y-auto shadow-md">
-        <a-watermark class="h-full" content="Ant Design Vue">
+        <a-watermark class="h-full" :content="label">
             <div class="w-full h-full text-center" v-if="isLod">
                 <a-spin class="mt-50"/>
             </div>
@@ -21,6 +21,7 @@ import { GlobalEvent } from '@/event/GlobalEvent';
 import { ref } from 'vue';
 import { HomeNet } from '@/net/api/HomeNet';
 import { current } from '../script';
+const label = import.meta.env['VITE_TITLE']
 const simpleImage = Empty.PRESENTED_IMAGE_SIMPLE;
 const isLod = ref(false);
 const domData = ref('');
