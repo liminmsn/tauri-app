@@ -22,5 +22,11 @@ import zhCN from 'ant-design-vue/es/locale/zh_CN';
 
 onMounted(() => {
   SearchHistory.getHistory();
+
+  document.body.addEventListener('contextmenu', function(event) {
+  event.preventDefault(); // 阻止默认的右键菜单
+  console.log('右键点击');
+  // 自定义右键菜单逻辑
+});
 })
 </script>
