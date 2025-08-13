@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { h, ref } from 'vue';
-import { FileTextFilled, Html5Filled } from '@ant-design/icons-vue';
+import { FileTextFilled, Html5Filled, FileImageOutlined } from '@ant-design/icons-vue';
 import { Card, Menu, MenuProps } from 'ant-design-vue';
 import { current } from '../script/index';
 const items = ref<MenuProps['items']>([
@@ -19,6 +19,11 @@ const items = ref<MenuProps['items']>([
         key: 'html',
         label: '.html',
         icon: () => h(Html5Filled),
+    },
+    {
+        key: 'img',
+        label: '.img',
+        icon: () => h(FileImageOutlined),
     }
 ]);
 </script>

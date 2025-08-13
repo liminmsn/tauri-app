@@ -1,6 +1,7 @@
-class WebDom extends DOMParser {
+export class WebDom extends DOMParser {
+    public dom: Document;
     constructor(dom: string) {
         super()
-        this.parseFromString(dom, 'text/html')
+        this.dom = this.parseFromString(dom, 'text/html')
     }
 }

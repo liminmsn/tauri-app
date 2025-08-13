@@ -4,7 +4,7 @@
             <list class="min-w-60" size="small" :data-source="SearchHistory.history">
                 <template #renderItem="{ item }">
                     <list-item>
-                        <tag @click="onClick(item)">{{ item }}</tag>
+                        <tag color="volcano"  @click="onClick(item)">{{ item }}</tag>
                         <template #actions>
                             <Button size="small" type="link" danger :icon="h(MinusCircleOutlined)"
                                 @click="SearchHistory.delete(item)" />
