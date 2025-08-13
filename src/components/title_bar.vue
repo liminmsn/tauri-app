@@ -1,11 +1,10 @@
 <template>
     <div class="flex p-1 pb-0">
-        <div class="title_bar flex-1 shadow-md bg-white rounded-md px-1 mr-1"
-            :style="{ color: theme_one }">
-            <img src="/public/icon/icon_0.png" class="h-5 drop-shadow-md" />
-            <span class="font-400 pl-2 pr-1">{{ title }}</span>
-        </div>
-        <div class="mr-1">
+        <Y_card class="flex items-center max-w-40">
+            <img src="/icon/icon_0.png" style="height: 14pt;" class="ml-2" />
+            <span class="pl-2" :style="{ color: theme_one }">{{ title }}</span>
+        </Y_card>
+        <div class="!w-full mr-1 flex-1 shadow-md rounded-md">
             <slot name="title_end_element" />
         </div>
         <Space class="justify-end title_bar_items" :size="2">
@@ -27,7 +26,8 @@
 import { MinusOutlined, FullscreenExitOutlined, FullscreenOutlined, CloseOutlined } from '@ant-design/icons-vue';
 import { Window } from '@tauri-apps/api/window';
 import { Button, Space } from 'ant-design-vue';
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
+import Y_card from './y_card.vue';
 const title = import.meta.env['VITE_TITLE'];
 const theme_one = import.meta.env['VITE_THEME_ONE'];
 
@@ -48,10 +48,6 @@ async function bnt_click(key: 0 | 1 | 2) {
             break;
     }
 }
-
-onMounted(() => {
-
-})
 </script>
 
 <style scoped>

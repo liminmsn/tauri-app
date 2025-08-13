@@ -1,13 +1,13 @@
 <template>
-  <Input class="shadow-md bg-transparent w-100" size="small" v-model:value="value"
-    placeholder="https://* || http://* || www.*" :enter-button="customIcon" @search="onSearch">
-  </Input>
+  <InputSearch size="small" v-model:value="value" placeholder="https://* || http://* || www.*"
+    :enter-button="customIcon" @search="onSearch">
+  </InputSearch>
 </template>
 <script setup lang="ts">
 import { GlobalEvent } from '@/event/GlobalEvent';
 import { isValidUrl } from '@/utility/Reg';
 import { SendOutlined } from '@ant-design/icons-vue';
-import { Input, message } from 'ant-design-vue';
+import { InputSearch, message } from 'ant-design-vue';
 import { h, ref } from 'vue';
 const value = ref<string>('');
 const customIcon = h(SendOutlined);
@@ -26,4 +26,8 @@ const onSearch = (searchValue: string) => {
   }
 };
 </script>
-<style scoped></style>
+<style scoped>
+:deep(.ant-btn-primary) {
+  box-shadow: none !important;
+}
+</style>

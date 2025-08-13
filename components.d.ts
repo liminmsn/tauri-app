@@ -11,6 +11,8 @@ declare module 'vue' {
     AButton: typeof import('ant-design-vue/es')['Button']
     ACalendar: typeof import('ant-design-vue/es')['Calendar']
     AEmpty: typeof import('ant-design-vue/es')['Empty']
+    AInput: typeof import('ant-design-vue/es')['Input']
+    AInputGroup: typeof import('ant-design-vue/es')['InputGroup']
     AInputSearch: typeof import('ant-design-vue/es')['InputSearch']
     AMenu: typeof import('ant-design-vue/es')['Menu']
     ASegmented: typeof import('ant-design-vue/es')['Segmented']
@@ -18,7 +20,10 @@ declare module 'vue' {
     AWatermark: typeof import('ant-design-vue/es')['Watermark']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Title_bar: typeof import('./src/components/title_bar.vue')['default']
     TitleBar: typeof import('./src/components/TitleBar.vue')['default']
+    Y_card: typeof import('./src/components/y_card.vue')['default']
+    Y_input: typeof import('./src/components/y_input.vue')['default']
     YInput: typeof import('./src/components/YInput.vue')['default']
   }
 }
