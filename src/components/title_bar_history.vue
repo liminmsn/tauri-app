@@ -1,12 +1,12 @@
 <template>
-    <Popover placement="bottomLeft" trigger="click">
+    <Popover placement="bottomLeft" trigger="focus">
         <template #content>
             <list class="min-w-60" size="small" :data-source="SearchHistory.history">
                 <template #renderItem="{ item }">
                     <list-item>
                         <tag class="max-w-80 text-ellipsis overflow-hidden" color="purple"  @click="onClick(item)">{{ item }}</tag>
                         <template #actions>
-                            <Button size="small" type="link" danger :icon="h(MinusCircleOutlined)"
+                            <Button size="small" type="link" danger :icon="h(CloseCircleOutlined)"
                                 @click="SearchHistory.delete(item)" />
                         </template>
                     </list-item>
@@ -20,7 +20,7 @@
 <script setup lang="ts">
 import { GlobalEvent } from '@/event/GlobalEvent';
 import { SearchHistory, value } from '@/views/Home/script';
-import { MinusCircleOutlined } from '@ant-design/icons-vue';
+import { CloseCircleOutlined } from '@ant-design/icons-vue';
 import { Button, List, ListItem, Popover, Tag } from 'ant-design-vue';
 import { h } from 'vue';
 
