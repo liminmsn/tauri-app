@@ -29,11 +29,11 @@ const items = ref<MenuProps['items']>([
 </script>
 
 <style scoped>
-:deep(.ant-card-body) {
+:deep(.ant-card-body) { 
     padding: 0 !important;
 }
 
-:deep(.ant-menu-item) {
+:deep(.ant-menu-item) { 
     user-select: none;
     cursor: pointer;
     height: 30px;

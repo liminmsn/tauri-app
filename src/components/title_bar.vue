@@ -12,7 +12,7 @@
         <Button class="shadow-md mr-1" size="small" shape="default" @click="clear">
             <ClearOutlined />
         </Button>
-        <div class="!w-full flex-1 shadow-md rounded-md">
+        <div class="!w-full flex-1 shadow-md rounded-md max-w-150">
             <slot name="title_end_element" />
         </div>
         <Y_card class="flex items-center max-w-20 mx-1"></Y_card>

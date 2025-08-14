@@ -29,6 +29,7 @@ declare module 'vue' {
     Title_bar_histroy: typeof import('./src/components/title_bar_histroy.vue')['default']
     TitleBar: typeof import('./src/components/TitleBar.vue')['default']
     Y_card: typeof import('./src/components/y_card.vue')['default']
+    Y_float_box: typeof import('./src/components/y_float_box.vue')['default']
     Y_input: typeof import('./src/components/y_input.vue')['default']
     YInput: typeof import('./src/components/YInput.vue')['default']
   }
