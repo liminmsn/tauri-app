@@ -1,12 +1,12 @@
 <template>
     <div class="html_img grid grid-cols-6">
         <div v-for="item in imgs" class="shadow-md transform-scale-95 bg-white">
-            <Checkbox class="position-absolute pos-right-1 z-1" v-show="isSelect" />
+            <Checkbox class="position-absolute pos-right-1 z-1" v-show="isSelect" v-model:checked="item.select" />
             <Image :src="item.src" :fallback="empty" :id="`dom_img_${item.src}`" />
         </div>
         <FloatButtonGroup style="right: 180px;bottom: 15px;">
             <Card class="min-w-40 min-h-10 p-2 shadow-xl">
-                <Checkbox v-model:checked="allSelect">全选</Checkbox>
+                <Checkbox v-model:checked="allSelect" v-show="isSelect">全选</Checkbox>
                 <Checkbox v-model:checked="isSelect">显示选择框</Checkbox>
                 <Button class="mt-2" size="small">保存所选</Button>
             </Card>
@@ -29,11 +29,11 @@ const isSelect = ref(false)
 const allSelect = ref(false)
 
 //全选监听
-watch(() => allSelect, (bol) => {
-    imgs.value.forEach(item => item.select = bol.value)
+watch(allSelect, (bol) => {
+    imgs.value.forEach(item => item.select = bol);
 });
 onMounted(() => {
-    const imgArr = Array.of(...new WebDom(prop.data).dom.getElementsByTagName('img'));
-    imgs.value = imgArr.map(img => { return { src: img.src, select: false } });
+    const imgArr = Array.of(...new WebDom(prop.data).dom.getElementsByTagName('img')).map(img => { return { src: img.src, select: false } });
+    imgs.value = imgArr;
 });
 </script>
