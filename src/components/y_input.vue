@@ -6,10 +6,10 @@
 <script setup lang="ts">
 import { GlobalEvent } from '@/event/GlobalEvent';
 import { isValidUrl } from '@/utility/Reg';
+import { value } from '@/views/Home/script';
 import { SendOutlined } from '@ant-design/icons-vue';
 import { InputSearch, message } from 'ant-design-vue';
-import { h, ref } from 'vue';
-const value = ref<string>('');
+import { h } from 'vue';
 const customIcon = h(SendOutlined);
 
 const onSearch = (searchValue: string) => {

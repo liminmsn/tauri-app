@@ -23,7 +23,7 @@ import { onMounted, ref } from 'vue';
 import { BackTop, Card, Empty } from 'ant-design-vue';
 import { GlobalEvent } from '@/event/GlobalEvent';
 import { HomeNet } from '@/net/api/HomeNet';
-import { current, SearchHistory } from '../script';
+import { current, domData, SearchHistory } from '../script';
 import Html_text from './components/html_text.vue';
 import Html_img from './components/html_img.vue';
 const water_mark = import.meta.env['VITE_MAIN_WATER_MARK'];
@@ -31,7 +31,14 @@ const main_tips = import.meta.env['VITE_MAIN_TIPS'];
 const simpleImage = Empty.PRESENTED_IMAGE_SIMPLE;
 const topBtn = ref(false);
 const isLod = ref(false);
-const domData = ref('');
+
+GlobalEvent.on('y_input', async ({ detail }: CustomEvent) => {
+    isLod.value = true;
+    const text = await new HomeNet(detail['searchValue']).getData()
+    domData.value = text;
+    isLod.value = false;
+    SearchHistory.add(detail['searchValue']);
+});
 
 let dom: HTMLElement | null;
 onMounted(() => {
@@ -45,20 +52,13 @@ onMounted(() => {
             topBtn.value = top > div;
         }
     }
-})
+});
 // 滚动到顶部
 function scrollTop() {
     if (dom) {
         dom.scroll({ top: 0, left: 0, behavior: 'smooth' })
     }
 }
-GlobalEvent.on('y_input', async ({ detail }: CustomEvent) => {
-    isLod.value = true;
-    const text = await new HomeNet(detail['searchValue']).getData()
-    domData.value = text;
-    isLod.value = false;
-    SearchHistory.add(detail['searchValue']);
-})
 </script>
 
 <style scoped>

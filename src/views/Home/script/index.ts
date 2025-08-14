@@ -1,11 +1,17 @@
 import { reactive, ref } from "vue";
 
-export const current = ref<string[]>(['text']);
+export const current = ref<string[]>(['text']);//左边默认选中栏
+export const value = ref<string>(''); //搜索框
+export const domData = ref('');//请求结果值
 
+export function clear() {
+    value.value = '';
+    domData.value = '';
+}
 
 /**搜索历史记录的保存 */
 export const SearchHistory = reactive({
-    history: ['https://www.acfun.cn/bangumilist', 'https://www.acfun.cn/bangumilist', 'https://www.acfun.cn/bangumilist', 'www.baidu.com'] as string[],
+    history: [] as string[],
     /**添加到本地历史 */
     add(url: string) {
         if (!this.history.includes(url)) {

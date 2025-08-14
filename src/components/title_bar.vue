@@ -9,6 +9,9 @@
                 <HistoryOutlined />
             </Title_bar_history>
         </Button>
+        <Button class="shadow-md mr-1" size="small" shape="default" @click="clear">
+            <ClearOutlined />
+        </Button>
         <div class="!w-full flex-1 shadow-md rounded-md">
             <slot name="title_end_element" />
         </div>
@@ -17,10 +20,10 @@
             <Button class="shadow-md" type="default" size="small" shape="default" @click="bnt_click(0)">
                 <MinusOutlined />
             </Button>
-            <Button class="shadow-md" type="default" size="small" shape="default" @click="bnt_click(1)">
+            <!-- <Button class="shadow-md" type="default" size="small" shape="default" @click="bnt_click(1)">
                 <FullscreenOutlined v-if="isFullScreen" />
                 <FullscreenExitOutlined v-else />
-            </Button>
+            </Button> -->
             <Button class="shadow-md" type="primary" size="small" shape="default" @click="bnt_click(2)">
                 <CloseOutlined />
             </Button>
@@ -29,12 +32,13 @@
 </template>
 
 <script setup lang="ts">
-import { MinusOutlined, FullscreenExitOutlined, FullscreenOutlined, CloseOutlined, HistoryOutlined } from '@ant-design/icons-vue';
+import { MinusOutlined, CloseOutlined, HistoryOutlined, ClearOutlined } from '@ant-design/icons-vue';
 import { Window } from '@tauri-apps/api/window';
 import { Button, Space } from 'ant-design-vue';
 import { ref } from 'vue';
 import Y_card from './y_card.vue';
 import Title_bar_history from './title_bar_history.vue';
+import { clear } from '@/views/Home/script';
 const title = import.meta.env['VITE_TITLE'];
 const theme_one = import.meta.env['VITE_THEME_ONE'];
 
