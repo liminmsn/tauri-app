@@ -1,6 +1,6 @@
 <template>
-    <Card class="left w-40 h-full overflow-hidden shadow-md">
-        <Menu mode="vertical" v-model:selectedKeys="current" :items="items" />
+    <Card class="left h-full overflow-hidden shadow-md">
+        <Menu mode="vertical" v-model:selectedKeys="current" :items="items"  />
     </Card>
 </template>
 
