@@ -2,6 +2,7 @@ import { fetch } from "@tauri-apps/plugin-http";
 import { writeFile } from "@tauri-apps/plugin-fs";
 import { downloadDir, join } from "@tauri-apps/api/path";
 import { fileTypeFromBuffer } from 'file-type';
+import { message } from 'ant-design-vue';
 
 export type ImagesType = {
     src: string;
@@ -21,9 +22,9 @@ export class ImgSave {
                 const type = await fileTypeFromBuffer(buffer);
                 const filePath = await join(downloads, `${idx}.${type?.ext}`);
                 await writeFile(filePath, buffer);
-                console.log(`${idx}图片保存成功:`, filePath);
+                message.success(`${idx}图片保存成功:${filePath}`)
             } catch (err) {
-                console.error(`${idx}保存图片失败:`, err);
+                message.error(`${idx}保存图片失败!`)
             }
         }));
     }
