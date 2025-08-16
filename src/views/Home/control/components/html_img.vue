@@ -26,7 +26,7 @@ const isSelect = ref(false)
 const allSelect = ref(false)
 
 function onSave() {
-    ImgSave.imgTagToFile(unref(imgs))
+    ImgSave.imgTagToFile(imgs.value.filter(item => item.select))
 }
 
 //全选监听

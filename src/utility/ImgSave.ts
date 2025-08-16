@@ -12,14 +12,14 @@ export class ImgSave {
     static async imgTagToFile(imgs: ImagesType[]) {
         if (!imgs || imgs.length === 0) return;
         const downloads = await downloadDir();
-        await Promise.all(imgs.map(async (url, idx) => {
+        await Promise.all(imgs.map(async (img, idx) => {
             try {
-                const res = await fetch(url.src, { method: "GET" });
+                const res = await fetch(img.src, { method: "GET" });
                 const blob = await res.blob();
                 const arrayBuffer = await blob.arrayBuffer();
                 const buffer = new Uint8Array(arrayBuffer);
                 const type = await fileTypeFromBuffer(buffer);
-                const filePath = await join(downloads,`${idx}.${type?.ext}`);
+                const filePath = await join(downloads, `${idx}.${type?.ext}`);
                 await writeFile(filePath, buffer);
                 console.log(`${idx}图片保存成功:`, filePath);
             } catch (err) {
