@@ -1,0 +1,12 @@
+{
+  "identifier": "fs",
+  "description": "Allow reading/writing inside Downloads folder",
+  "windows": ["main"],
+  "permissions": [
+    "fs:allow-write-file",
+    "fs:allow-read-file",
+    "fs:allow-create",
+    "fs:allow-open",
+    "fs:scope-download-recursive"
+  ]
+}
