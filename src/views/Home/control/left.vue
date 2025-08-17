@@ -1,12 +1,12 @@
 <template>
     <Card class="left h-full overflow-hidden shadow-md">
-        <Menu mode="vertical" v-model:selectedKeys="current" :items="items"  />
+        <Menu mode="vertical" v-model:selectedKeys="current" :items="items" />
     </Card>
 </template>
 
 <script setup lang="ts">
 import { h, ref } from 'vue';
-import { FileTextFilled, Html5Filled, FileImageOutlined } from '@ant-design/icons-vue';
+import { FileTextFilled, Html5Filled, FileImageOutlined, FormOutlined } from '@ant-design/icons-vue';
 import { Card, Menu, MenuProps } from 'ant-design-vue';
 import { current } from '../script/index';
 const items = ref<MenuProps['items']>([
@@ -24,16 +24,21 @@ const items = ref<MenuProps['items']>([
         key: 'img',
         label: '.img',
         icon: () => h(FileImageOutlined),
+    },
+    {
+        key: 'zdy',
+        label: '自定义',
+        icon: () => h(FormOutlined),
     }
 ]);
 </script>
 
 <style scoped>
-:deep(.ant-card-body) { 
+:deep(.ant-card-body) {
     padding: 0 !important;
 }
 
-:deep(.ant-menu-item) { 
+:deep(.ant-menu-item) {
     user-select: none;
     cursor: pointer;
     height: 30px;

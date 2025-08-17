@@ -8,6 +8,7 @@
                 <Html_text v-if="current[0] == 'text'">{{ domData }}</Html_text>
                 <Html_dom v-else-if="current[0] == 'html'" :data="domData" />
                 <Html_img v-else-if="current[0] == 'img'" :data="domData" />
+                <Html_zdy v-else-if="current[0] == 'zdy'" :data="domData" />
             </template>
             <div v-else class="pt-50">
                 <a-empty :image="simpleImage" :description="main_tips" />
@@ -27,6 +28,7 @@ import { current, domData, SearchHistory } from '../script';
 import Html_text from './components/html_text.vue';
 import Html_img from './components/html_img.vue';
 import Html_dom from './components/html_dom.vue';
+import Html_zdy from './components/html_zdy.vue';
 const water_mark = import.meta.env['VITE_MAIN_WATER_MARK'];
 const main_tips = import.meta.env['VITE_MAIN_TIPS'];
 const simpleImage = Empty.PRESENTED_IMAGE_SIMPLE;
