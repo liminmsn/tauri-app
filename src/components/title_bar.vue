@@ -1,8 +1,8 @@
 <template>
     <div class="flex p-1 pb-0">
-        <Y_card class="flex items-center max-w-40">
-            <img src="/icon/icon_0.png" style="height: 14pt;" class="ml-2" />
-            <span class="pl-2" :style="{ color: theme_one }">{{ title }}</span>
+        <Y_card class="max-w-40">
+            <img src="/icon/icon_0.png" style="height: 14pt;" class="" />
+            <span class="pl-1" style="color: var(--VITE_THEME_ONE);line-height: 1.5;">{{ title }}</span>
         </Y_card>
         <Button class="shadow-md mx-1" size="small" shape="default">
             <Title_bar_history>
@@ -12,10 +12,15 @@
         <Button class="shadow-md mr-1" size="small" shape="default" @click="clear">
             <ClearOutlined />
         </Button>
-        <div class="!w-full flex-1 shadow-md rounded-md max-w-150">
+        <div class="!w-full flex-1 shadow-md rounded-md w-100 max-w-110">
             <slot name="title_end_element" />
         </div>
-        <Y_card class="flex items-center max-w-20 mx-1"></Y_card>
+        <Button class="shadow-md ml-1" size="small" shape="default">
+            <Title_bar_setting>
+                <SettingOutlined />
+            </Title_bar_setting>
+        </Button>
+        <Y_card class="max-w-20 mx-1"></Y_card>
         <Space class="justify-end title_bar_items" :size="2">
             <Button class="shadow-md" type="default" size="small" shape="default" @click="bnt_click(0)">
                 <MinusOutlined />
@@ -32,15 +37,15 @@
 </template>
 
 <script setup lang="ts">
-import { MinusOutlined, CloseOutlined, HistoryOutlined, ClearOutlined } from '@ant-design/icons-vue';
+import { MinusOutlined, CloseOutlined, HistoryOutlined, ClearOutlined, SettingOutlined } from '@ant-design/icons-vue';
 import { Window } from '@tauri-apps/api/window';
 import { Button, Space } from 'ant-design-vue';
 import { ref } from 'vue';
 import Y_card from './y_card.vue';
 import Title_bar_history from './title_bar_history.vue';
 import { clear } from '@/views/Home/script';
+import Title_bar_setting from './title_bar_setting.vue';
 const title = import.meta.env['VITE_TITLE'];
-const theme_one = import.meta.env['VITE_THEME_ONE'];
 
 const isFullScreen = ref(true);
 const appWindow = Window.getCurrent();

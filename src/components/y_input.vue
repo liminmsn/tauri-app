@@ -1,6 +1,6 @@
 <template>
-  <InputSearch size="small" v-model:value="value" placeholder="https://* || http://*"
-    :enter-button="customIcon" @search="onSearch">
+  <InputSearch size="small" v-model:value="value" placeholder="https://* || http://*" :enter-button="customIcon"
+    @search="onSearch">
   </InputSearch>
 </template>
 <script setup lang="ts">
@@ -27,6 +27,13 @@ const onSearch = (searchValue: string) => {
 };
 </script>
 <style scoped>
+/* :deep(.ant-input-wrapper){
+  background-color: rebeccapurple;
+} */
+:deep(.ant-input){
+  height: 24px;
+}
+
 :deep(.ant-btn-primary) {
   box-shadow: none !important;
 }
