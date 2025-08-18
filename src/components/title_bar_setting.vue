@@ -69,7 +69,7 @@ function setThemeColor(color: string) {
 function addTheme(color: string | null) {
     if (color) {
         theme_color_arr.push(color);
-        localStorage.setItem('theme_color_arr', JSON.stringify(theme_color_arr));
+        localStorage.setItem('app_theme_arr', JSON.stringify(theme_color_arr));
         setThemeColor(color);
     }
 }
