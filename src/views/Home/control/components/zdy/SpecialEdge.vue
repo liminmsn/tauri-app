@@ -7,11 +7,11 @@ const props = defineProps<EdgeProps>()
 const path = computed(() => getBezierPath(props))
 </script>
 
-<!-- <script lang="ts">
+<script lang="ts">
 export default {
   inheritAttrs: false,
 }
-</script> -->
+</script>
 
 <template>
   <!-- You can use the `BaseEdge` component to create your own custom edge more easily -->

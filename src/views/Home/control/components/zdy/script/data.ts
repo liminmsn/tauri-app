@@ -28,7 +28,7 @@ export const nodes = ref<Node[]>([
     },
     {
         id: '4',
-        type: 'special',
+        // type: 'special',
         position: { x: 400, y: 100 },
         data: {
             label: 'Node 4',
