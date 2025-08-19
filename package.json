@@ -16,6 +16,7 @@
     "@tauri-apps/plugin-fs": "^2.4.1",
     "@tauri-apps/plugin-http": "~2",
     "@tauri-apps/plugin-opener": "^2",
+    "@vue-flow/core": "^1.46.0",
     "animejs": "^4.1.2",
     "ant-design-vue": "4.x",
     "file-type": "^21.0.0",

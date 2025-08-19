@@ -8,7 +8,7 @@
                 <Html_text v-if="current[0] == 'text'">{{ domData }}</Html_text>
                 <Html_dom v-else-if="current[0] == 'html'" :data="domData" />
                 <Html_img v-else-if="current[0] == 'img'" :data="domData" />
-                <Html_zdy v-else-if="current[0] == 'zdy'" :data="domData" />
+                <Html_zdy v-else-if="current[0] == 'blueprint'" :data="domData" />
             </template>
             <div v-else class="pt-50">
                 <a-empty :image="simpleImage" :description="main_tips" />
