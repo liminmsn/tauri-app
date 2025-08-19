@@ -1,13 +1,13 @@
 import { ref } from "vue"
+import type { Node, Edge } from '@vue-flow/core'
 
-export const nodes = ref([
+export const nodes = ref<Node[]>([
     {
         id: '1',
         type: 'input',
-        position: { x: 250, y: 5 },
-        data: { label: 'Node 1' },
+        position: { x: 10, y: 50 },
+        data: { label: '<h1>123</h1>' },
     },
-
     {
         id: '2',
         position: { x: 100, y: 100 },
@@ -32,7 +32,7 @@ export const nodes = ref([
     },
 ])
 
-export const edges = ref([
+export const edges = ref<Edge[]>([
     {
         id: 'e1->2',
         source: '1',

@@ -10,21 +10,21 @@ import { FileTextFilled, Html5Filled, FileImageOutlined, ApartmentOutlined } fro
 import { Card, Menu, MenuProps } from 'ant-design-vue';
 import { current } from '../script/index';
 const items = ref<MenuProps['items']>([
-    {
-        key: 'text',
-        label: '.text',
-        icon: () => h(FileTextFilled),
-    },
-    {
-        key: 'html',
-        label: '.html',
-        icon: () => h(Html5Filled),
-    },
-    {
-        key: 'img',
-        label: '.img',
-        icon: () => h(FileImageOutlined),
-    },
+    // {
+    //     key: 'text',
+    //     label: '.text',
+    //     icon: () => h(FileTextFilled),
+    // },
+    // {
+    //     key: 'html',
+    //     label: '.html',
+    //     icon: () => h(Html5Filled),
+    // },
+    // {
+    //     key: 'img',
+    //     label: '.img',
+    //     icon: () => h(FileImageOutlined),
+    // },
     {
         key: 'blueprint',
         label: 'BP',
