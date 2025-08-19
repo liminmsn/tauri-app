@@ -1,17 +1,16 @@
-import { Edge, Node } from "@vue-flow/core";
-import { edges, nodes } from "./data";
-import { Ref } from "vue";
 import '@vue-flow/core/dist/style.css';
 import '@vue-flow/core/dist/theme-default.css';
+import { NodeArr } from "./core/NodeArr";
+import { EdgeArr } from './core/EdgeArr';
+import { Action } from './core/Action';
 
 export class Flow {
-    nodes: Ref<Node[]>;
-    edges: Ref<Edge[]>;
+    nodeArr: NodeArr;
+    edgedArr: EdgeArr;
+    action: Action;
     constructor() {
-        this.nodes = nodes;
-        this.edges = edges;
-    }
-    addNode() {
-        // this.nodes.value.push()
+        this.nodeArr = new NodeArr();
+        this.edgedArr = new EdgeArr();
+        this.action = new Action(this);
     }
 }

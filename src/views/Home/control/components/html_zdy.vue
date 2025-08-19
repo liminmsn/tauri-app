@@ -1,17 +1,44 @@
 <template>
     <div class="html_zdy">
-        <VueFlow class="h-full w-full" :nodes="nodes" :edges="edges">
+        <VueFlow :nodes="nodeArr.nodes.value" :edges="edgedArr.edges.value">
             <Panel position="top-left">
                 <Space>
-                    <Dropdown>
-                        <Button type="primary" size="small">对象</Button>
-                        <template #overlay>
-                            <Menu>
-                                <MenuItem class="!p-0">A</MenuItem>
+                    <Dropdown v-for="item in flow.action.list">
+                        <Button type="primary" size="small">{{ item.name }}</Button>
+                        <template #overlay v-if="item.children">
+                            <Menu class="!p-0">
+                                <SubMenu v-for="item_ in item.children" :key="item_.name" :title="item_.name"
+                                    @click="item_.onDown ? item_.onDown(item_) : null">
+                                    <MenuItem class="!p-0" v-for="btn in item_.children"
+                                        @click="btn.onDown ? btn.onDown(btn) : null">
+                                    <Button type="primary" ghost size="small">{{ btn.name }}</Button>
+                                    </MenuItem>
+                                </SubMenu>
                             </Menu>
                         </template>
                     </Dropdown>
-                    <Button type="primary" size="small">对象</Button>
+                </Space>
+            </Panel>
+        </VueFlow>
+        <!-- <VueFlow class="h-full w-full" :nodes="nodeArr.nodes.value" :edges="edgedArr.edges.value" :nodesDraggable="true"
+            :nodesConnectable="true" :edgesUpdatable="true" :autoConnect="false" @connect="handleConnect"
+            @edge-update="handleEdgeUpdate" @edge-remove="handleEdgeRemove">
+            <Panel position="top-left">
+                <Space>
+                    <Dropdown v-for="item in flow.action.list">
+                        <Button type="primary" size="small">{{ item.name }}</Button>
+                        <template #overlay v-if="item.children">
+                            <Menu class="!p-0">
+                                <SubMenu v-for="item_ in item.children" :key="item_.name" :title="item_.name"
+                                    @click="item_.onDown ? item_.onDown(item_) : null">
+                                    <MenuItem class="!p-0" v-for="btn in item_.children"
+                                        @click="btn.onDown ? btn.onDown(btn) : null">
+                                    <Button type="primary" ghost size="small">{{ btn.name }}</Button>
+                                    </MenuItem>
+                                </SubMenu>
+                            </Menu>
+                        </template>
+                    </Dropdown>
                 </Space>
             </Panel>
             <template #node-special="specialNodeProps">
@@ -20,18 +47,27 @@
             <template #edge-special="specialEdgeProps">
                 <SpecialEdge v-bind="specialEdgeProps" />
             </template>
-        </VueFlow>
+        </VueFlow> -->
     </div>
 </template>
 
 <script setup lang="ts">
-import { VueFlow, Panel } from '@vue-flow/core'
-import SpecialNode from './zdy/SpecialNode.vue'
-import SpecialEdge from './zdy/SpecialEdge.vue'
-import { Button, Dropdown, Menu, MenuItem, Space } from 'ant-design-vue'
+import { VueFlow, Panel, useVueFlow } from '@vue-flow/core'
+import { Button, Dropdown, Menu, MenuItem, Space, SubMenu } from 'ant-design-vue'
 import { Flow } from './zdy/script/Flow'
 const flow = new Flow();
-const { nodes, edges } = flow;
+const { nodeArr, edgedArr } = flow;
+const { onInit, findNode, fitView, snapToGrid } = useVueFlow()
+snapToGrid.value = true
+
+onInit((instance) => {
+    console.log(instance);
+    fitView()
+    const node = findNode('1')
+    if (node) {
+        node.position = { x: 100, y: 100 }
+    }
+})
 </script>
 
 <style>

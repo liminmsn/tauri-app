@@ -1,12 +1,11 @@
 import { Node } from "@vue-flow/core";
 
-abstract class FNode {
-    node?: Node;
-    createNode() {
-        this.node = {
+export abstract class FNode {
+    createNode(type: 'input' | 'output' | 'special' | ''): Node {
+        return {
             id: String(Date.now()),
-            type: '',
             position: { x: 0, y: 0 },
-        }
+            type: type,
+        };
     }
 }
