@@ -8,6 +8,8 @@ export class NodeArr {
         this.nodes.value = nodes.value;
     }
     addNode(node: Node) {
-        this.nodes.value.push(node);
+        if (!this.nodes.value.includes(node)) {
+            this.nodes.value.push(node);
+        }
     }
 }
