@@ -44,8 +44,7 @@ export class Action {
         // alert(_args.id)
         switch (_args.id) {
             case '0-0-1':
-                let node = this.flow.nodeArr.createNode('input');
-                node = {
+                const node = {
                     id: Date.now().toString(),
                     type: 'input',
                     data: { label: 'DOM' },
