@@ -28,13 +28,14 @@ export function theme_main_init() {
 export function theme_color_mode(isDark: number) {
     if (isDark == 1) {
         theme_main.token = {
-            colorBgContainer: '#00000099',
+            colorBgContainer: '#000000dd',
             colorBgBase: '#00000000',
-            colorText: 'rgba(255, 255, 255, 0.85)',
+            colorTextBase: 'rgba(255, 255, 255, 0.85)',
+            colorFill: 'rgba(255, 255, 255, 0.85)',
             colorPrimary: localStorage.getItem('app_theme') ?? ''
         }
         theme_main.components = {
-            
+
         }
     } else {
         theme_main.token = {
