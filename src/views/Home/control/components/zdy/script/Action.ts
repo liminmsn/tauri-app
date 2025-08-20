@@ -1,5 +1,6 @@
-import { Position } from "@vue-flow/core";
+import { Node, Position } from "@vue-flow/core";
 import { Flow } from "./Flow";
+import { domData } from "@/views/Home/script";
 
 interface ActionItemType {
     id: string;
@@ -48,27 +49,20 @@ export class Action {
     private _onDown(_args: ActionItemType) {
         switch (_args.id) {
             case '0-0-1':
-                const node = {
-                    id: Date.now().toString(),
-                    type: 'input',
-                    data: { label: 'DOM', data: '213123' },
+                const node_dom: Node = {
+                    id: '0',
+                    type: 'dom',
+                    data: { type: 'obj', data: domData },
                     position: { x: 10, y: 50 },
-                    sourcePosition: Position.Right,
-                    style: {
-                        width: '80px',
-                        '--vf-handle': 'var(--VITE_THEME_ONE)',
-                        border: '1px solid var(--VITE_THEME_ONE)',
-                        background: 'var(--VITE_THEME_ONE_BG)'
-                    },
                 };
-                this.flow.vueFlow.addNodes(node);
+                this.flow.vueFlow.addNodes(node_dom);
                 break;
             case '0-0-2':
-                const node_tag = {
+                const node_tag: Node = {
+                    position: { x: 100, y: 100 },
                     id: Date.now().toString(),
                     type: 'downall',
-                    data: { label: '获取dom元素', data: '213123' },
-                    position: { x: 100, y: 100 },
+                    data: { type: 'fun', data: {} },
                 };
                 this.flow.vueFlow.addNodes(node_tag)
                 break;

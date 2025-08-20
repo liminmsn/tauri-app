@@ -1,13 +1,8 @@
 <template>
   <div class="html_zdy">
-    <VueFlow 
-    v-model:nodes="nodeArr" 
-    v-model:edges="edgedArr" 
-    :fit-view-on-init="true" 
-    :connection-mode="ConnectionMode.Strict" 
-    :connection-line-style="{ stroke: '#000' }"
-    @connect="(params) => onConnect(params)"
-    @edge-click="(edge) => onEdgeClick(edge)">
+    <VueFlow v-model:nodes="nodeArr" v-model:edges="edgedArr" :fit-view-on-init="true"
+      :connection-mode="ConnectionMode.Strict" :connection-line-style="{ stroke: '#000' }"
+      @connect="(params) => flow.onConnect(params)" @edge-click="(edge) => flow.onEdgeClick(edge)">
       <Background color="var(--VITE_THEME_ONE)" />
       <Controls />
       <Panel position="top-left">
@@ -28,8 +23,11 @@
         </Space>
       </Panel>
 
+      <template #node-dom="nodeProps">
+        <NodeDom v-bind="nodeProps" />
+      </template>
       <template #node-downall="nodeProps">
-        <DownAllNode v-bind="nodeProps" />
+        <NodeDownAll v-bind="nodeProps" />
       </template>
     </VueFlow>
   </div>
@@ -41,17 +39,15 @@ import { Button, Dropdown, Menu, MenuItem, Space, SubMenu } from 'ant-design-vue
 import { Flow } from './zdy/script/Flow';
 import { Background } from '@vue-flow/background';
 import { Controls } from '@vue-flow/controls';
-import DownAllNode from './zdy/DownAllNode.vue';
+import NodeDownAll from './zdy/NodeDownAll.vue';
+import NodeDom from './zdy/NodeDom.vue';
 const flow = new Flow(useVueFlow());
-const { nodeArr, edgedArr, vueFlow, onConnect, onEdgeClick } = flow;
+const { nodeArr, edgedArr } = flow;
 </script>
 
 <style scoped>
 .html_zdy {
   height: 100%;
-  /* background:
-    repeating-linear-gradient(to right, transparent, var(--VITE_THEME_ONE) 0.1pt, transparent 1pt, transparent 20pt),
-    repeating-linear-gradient(to bottom, transparent, var(--VITE_THEME_ONE) 0.1pt, transparent 1pt, transparent 20pt); */
 }
 
 /* 自定义连线样式 */

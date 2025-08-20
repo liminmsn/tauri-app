@@ -10,15 +10,14 @@ export class Flow {
     action: Action;
     constructor(public vueFlow: VueFlowStore) {
         this.action = new Action(this);
-
-        const { onInit, findNode, fitView, snapToGrid } = vueFlow;
+        const { onInit, fitView, snapToGrid } = vueFlow;
         snapToGrid.value = true;
-        onInit((instance) => {
+        onInit((_instance) => {
             fitView()
-            const node = findNode('1')
-            if (node) {
-                //   node.position = { x: 100, y: 100 }
-            }
+            // const node = findNode('1')
+            // if (node) {
+            //     //   node.position = { x: 100, y: 100 }
+            // }
         });
     }
 
