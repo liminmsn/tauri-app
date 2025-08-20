@@ -13,6 +13,7 @@ data.task = function (data_: FNodeData<any>) {
 <template>
     <div class="view-node" :data-type="props.type">
         <Handle type="target" :position="Position.Left" />
+        <Handle type="source" :position="Position.Right" />
         {{ data['current'] }}
     </div>
 </template>
@@ -21,8 +22,9 @@ data.task = function (data_: FNodeData<any>) {
 <style scoped>
 .view-node {
     --vf-handle: var(--VITE_THEME_ONE);
-    min-width: 100px;
     min-height: 100px;
+    min-width: 100px;
+    overflow-y: scroll;
     padding: 8px;
     border-radius: 4px;
     border: 1px solid var(--vf-handle);

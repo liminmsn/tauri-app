@@ -4,8 +4,8 @@ import '@vue-flow/controls/dist/style.css'
 import { Action } from './Action';
 import { Connection, Edge, EdgeMouseEvent, Node, VueFlowStore } from '@vue-flow/core';
 import { domData } from '@/views/Home/script';
-import { OBJNode } from './lib/ObjNode';
 import { WebDom } from '@/utility/WebDom';
+import { OBJNode } from './lib/OBJNode';
 
 export class Flow {
     nodeArr: Node[] = [];

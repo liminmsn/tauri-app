@@ -8,7 +8,7 @@
       <Panel position="top-left">
         <Space>
           <Dropdown v-for="item in flow.action.list">
-            <Button type="primary" size="small" @click="item.onDown ? item.onDown(item) : null">{{ item.name }}</Button>
+            <Button type="primary" ghost size="small" @click="item.onDown ? item.onDown(item) : null">{{ item.name }}</Button>
             <template #overlay v-if="item.children">
               <Menu class="!p-0">
                 <SubMenu v-for="item_ in item.children" :key="item_.name" :title="item_.name"

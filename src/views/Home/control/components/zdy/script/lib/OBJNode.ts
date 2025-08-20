@@ -1,7 +1,7 @@
 import { FNode, FNodeData } from "./core/FNode";
 
 export class OBJNode extends FNode<any> {
-    constructor(public id: string, public type: string, public data: FNodeData<any> = { raw: null, current: null }) {
+    constructor(public id: string, public type: string, public data: FNodeData<any> = { raw: {}, current: {} }) {
         super();
         this.data = data;
     }

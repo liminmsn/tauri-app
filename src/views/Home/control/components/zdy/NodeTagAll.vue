@@ -6,15 +6,16 @@ import { ref } from 'vue';
 import { FNodeData } from './script/lib/core/FNode';
 import { WebDom } from '@/utility/WebDom';
 const one = ref('img');
+const one_sum = ref(0);
 const two = ref('src');
 
 const props = defineProps<NodeProps>()
 const { data } = props;
 data.task = function (data_: FNodeData<any>) {
     const { dom } = data_.current as WebDom;
-    console.dir(dom);
     const tags = Array.from(dom.getElementsByTagName(one.value));
-    const vals = tags.map(tag => tag.getAttribute('src')).filter(item => item != null);
+    one_sum.value = tags.length;
+    const vals = tags.map(tag => tag.getAttribute(two.value)).filter(item => item != null);
     data.current = vals;
 }
 </script>
@@ -25,6 +26,7 @@ data.task = function (data_: FNodeData<any>) {
         <Handle type="source" :position="Position.Right" />
         <Space direction="vertical">
             <Input size="small" placeholder="标签:img a audio" v-model:value="one" />
+            <Tag v-if="one_sum > 0" color="success">查找结果:{{ one_sum }}</Tag>
             <Input size="small" placeholder="属性:src href url" v-model:value="two" />
             <Tag v-if="data['current']['length'] > 0" color="success">查找结果:{{ data['current']['length'] }}</Tag>
         </Space>
