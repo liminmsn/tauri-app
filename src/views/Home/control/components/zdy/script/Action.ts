@@ -1,5 +1,5 @@
 import { Position } from "@vue-flow/core";
-import { Flow } from "../Flow";
+import { Flow } from "./Flow";
 
 interface ActionItemType {
     id: string;
@@ -25,20 +25,13 @@ export class Action {
                         children: [
                             {
                                 id: '0-0-1',
-                                name: "请求的dom",
+                                name: "网络请求DOM",
                                 onDown: this._onDown.bind(this)
                             },
                             {
                                 id: '0-0-2',
-                                name: "获取标签",
+                                name: "DOM子元素",
                                 onDown: this._onDown.bind(this)
-                                // children: [
-                                //     {
-                                //         id: '1-1-1',
-                                //         name: "所有img",
-                                //         onDown: this._onDown.bind(this)
-                                //     }
-                                // ]
                             }
                         ]
                     }
@@ -46,7 +39,7 @@ export class Action {
             },
             {
                 id: '1',
-                name: '操作',
+                name: '输出',
                 onDown: this._onDown,
                 children: [],
             }
@@ -68,7 +61,16 @@ export class Action {
                         background: 'var(--VITE_THEME_ONE_BG)'
                     },
                 };
-                this.flow.nodeArr.addNode(node);
+                this.flow.vueFlow.addNodes(node);
+                break;
+            case '0-0-2':
+                const node_tag = {
+                    id: Date.now().toString(),
+                    type: 'downall',
+                    data: { label: '获取dom元素', data: '213123' },
+                    position: { x: 100, y: 100 },
+                };
+                this.flow.vueFlow.addNodes(node_tag)
                 break;
         }
     }

@@ -1,8 +1,15 @@
 <template>
   <div class="html_zdy">
-    <VueFlow v-model:nodes="nodeArr.nodes.value" v-model:edges="edgedArr.edges.value" @connect="onConnect"
-      @edge-click="onEdgeClick" :connection-line-style="{ stroke: '#000' }" :connection-mode="ConnectionMode.Strict"
-      :fit-view-on-init="true">
+    <VueFlow 
+    v-model:nodes="nodeArr" 
+    v-model:edges="edgedArr" 
+    :fit-view-on-init="true" 
+    :connection-mode="ConnectionMode.Strict" 
+    :connection-line-style="{ stroke: '#000' }"
+    @connect="(params) => onConnect(params)"
+    @edge-click="(edge) => onEdgeClick(edge)">
+      <Background color="var(--VITE_THEME_ONE)" />
+      <Controls />
       <Panel position="top-left">
         <Space>
           <Dropdown v-for="item in flow.action.list">
@@ -20,48 +27,31 @@
           </Dropdown>
         </Space>
       </Panel>
+
+      <template #node-downall="nodeProps">
+        <DownAllNode v-bind="nodeProps" />
+      </template>
     </VueFlow>
   </div>
 </template>
 
 <script setup lang="ts">
-import { VueFlow, Panel, ConnectionMode, useVueFlow, Connection, Edge, EdgeMouseEvent } from '@vue-flow/core';
+import { VueFlow, Panel, ConnectionMode, useVueFlow } from '@vue-flow/core';
 import { Button, Dropdown, Menu, MenuItem, Space, SubMenu } from 'ant-design-vue';
 import { Flow } from './zdy/script/Flow';
+import { Background } from '@vue-flow/background';
+import { Controls } from '@vue-flow/controls';
+import DownAllNode from './zdy/DownAllNode.vue';
 const flow = new Flow(useVueFlow());
-const { nodeArr, edgedArr, vueFlow } = flow;
-
-const { onInit, findNode, fitView, snapToGrid } = vueFlow;
-snapToGrid.value = true;
-
-function onConnect(params: Edge | Connection) {
-  console.log('创建连线:', params)
-  // 可以在这里添加连线验证逻辑
-  // 如果验证通过，添加连线到edges数组
-  vueFlow.addEdges([params])
-}
-
-// 处理连线点击事件
-function onEdgeClick(edgeMouseEvent: EdgeMouseEvent) {
-  console.log('点击连线:', edgeMouseEvent)
-  // 可以在这里实现删除连线或其他操作
-}
-
-onInit((instance) => {
-  fitView()
-  const node = findNode('1')
-  if (node) {
-    node.position = { x: 100, y: 100 }
-  }
-});
+const { nodeArr, edgedArr, vueFlow, onConnect, onEdgeClick } = flow;
 </script>
 
-<style>
+<style scoped>
 .html_zdy {
   height: 100%;
-  background:
-    repeating-linear-gradient(to right, transparent, var(--VITE_THEME_ONE_BG) 0.1pt, transparent 1pt, transparent 20pt),
-    repeating-linear-gradient(to bottom, transparent, var(--VITE_THEME_ONE_BG) 0.1pt, transparent 1pt, transparent 20pt);
+  /* background:
+    repeating-linear-gradient(to right, transparent, var(--VITE_THEME_ONE) 0.1pt, transparent 1pt, transparent 20pt),
+    repeating-linear-gradient(to bottom, transparent, var(--VITE_THEME_ONE) 0.1pt, transparent 1pt, transparent 20pt); */
 }
 
 /* 自定义连线样式 */
