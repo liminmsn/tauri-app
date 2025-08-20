@@ -1,13 +1,15 @@
 <template>
     <div class="title_bar flex pt-1 px-1">
-        <div class="w-100 flex-1"></div>
+        <div class="w-100 flex-1">{{ title }}</div>
+        <div class="px-1">
+            <TitleSetting>
+                <Button type="default" size="small" :icon="h(SettingFilled)"></Button>
+            </TitleSetting>
+        </div>
+        <Card class="w-20 mr-1"></Card>
         <div class="title_bar_items flex gap-1">
             <Button type="default" size="small" shape="default" @click="bnt_click(0)">
                 <MinusOutlined />
-            </Button>
-            <Button type="default" size="small" shape="default" @click="bnt_click(1)">
-                <FullscreenOutlined v-if="isFullScreen" />
-                <FullscreenExitOutlined v-else />
             </Button>
             <Button type="primary" size="small" shape="default" danger @click="bnt_click(2)">
                 <CloseOutlined />
@@ -17,10 +19,12 @@
 </template>
 
 <script setup lang="ts">
-import { MinusOutlined, FullscreenExitOutlined, FullscreenOutlined, CloseOutlined } from '@ant-design/icons-vue';
+import { MinusOutlined, SettingFilled, CloseOutlined } from '@ant-design/icons-vue';
 import { Window } from '@tauri-apps/api/window';
-import { Button } from 'ant-design-vue';
-import { onMounted, ref } from 'vue';
+import { Button, Card } from 'ant-design-vue';
+import { h, onMounted, ref } from 'vue';
+import TitleSetting from './TitleSetting.vue';
+const title = import.meta.env.VITE_TITLE;
 const isFullScreen = ref(true);
 const appWindow = Window.getCurrent();
 async function bnt_click(key: 0 | 1 | 2) {
@@ -40,7 +44,7 @@ async function bnt_click(key: 0 | 1 | 2) {
 }
 
 onMounted(() => {
-    
+
 })
 </script>
 
