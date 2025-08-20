@@ -3,6 +3,9 @@ import '@vue-flow/core/dist/theme-default.css';
 import '@vue-flow/controls/dist/style.css'
 import { Action } from './Action';
 import { Connection, Edge, EdgeMouseEvent, Node, VueFlowStore } from '@vue-flow/core';
+import { domData } from '@/views/Home/script';
+import { OBJNode } from './lib/ObjNode';
+import { WebDom } from '@/utility/WebDom';
 
 export class Flow {
     nodeArr: Node[] = [];
@@ -11,13 +14,14 @@ export class Flow {
     constructor(public vueFlow: VueFlowStore) {
         this.action = new Action(this);
         const { onInit, fitView, snapToGrid } = vueFlow;
-        snapToGrid.value = true;
+        snapToGrid.value = !true;
         onInit((_instance) => {
             fitView()
-            // const node = findNode('1')
-            // if (node) {
-            //     //   node.position = { x: 100, y: 100 }
-            // }
+            const node_dom = new OBJNode('0', 'dom', {
+                raw: domData,
+                current: new WebDom(domData.value)
+            });
+            this.vueFlow.addNodes(node_dom);
         });
     }
 

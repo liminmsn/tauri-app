@@ -1,26 +1,28 @@
 <script setup lang="ts">
 import { Handle, Position } from '@vue-flow/core';
-import type { Node, NodeProps } from '@vue-flow/core';
-const props = defineProps<NodeProps>()
+import type { NodeProps } from '@vue-flow/core';
+import { FNodeData } from './script/lib/core/FNode';
 
-const isValidTargetConnection = (connection: { target: string | Node<any, any, string>[]; }) => {
-    // console.count();
-    // console.log(connection)
-    return !false
+const props = defineProps<NodeProps>()
+const { data } = props;
+data.task = function (data_: FNodeData<any>) {
+    data['current'] = data_.current;
 }
 </script>
 
 <template>
-    <div class="dom-node" :data-type="props.type">
-        <Handle type="source" :position="Position.Right" :is-valid-connection="isValidTargetConnection" />
-        <iframe style="" :srcdoc="props.data.raw"></iframe>
+    <div class="view-node" :data-type="props.type">
+        <Handle type="target" :position="Position.Left" />
+        {{ data['current'] }}
     </div>
 </template>
 
 
 <style scoped>
-.dom-node {
+.view-node {
     --vf-handle: var(--VITE_THEME_ONE);
+    min-width: 100px;
+    min-height: 100px;
     padding: 8px;
     border-radius: 4px;
     border: 1px solid var(--vf-handle);
@@ -35,19 +37,22 @@ const isValidTargetConnection = (connection: { target: string | Node<any, any, s
         content: attr(data-type);
         color: white;
         padding-inline: 4px;
-        background-color: rgb(0, 208, 255);
+        background-color: rgb(0, 255, 89);
     }
 }
-iframe{
+
+iframe {
     max-width: 100px;
     max-height: 100px;
     border: none;
-    &::-webkit-scrollbar{
+
+    &::-webkit-scrollbar {
         appearance: none;
         width: 0;
         height: 0;
     }
-    &::-webkit-scrollbar-thumb{
+
+    &::-webkit-scrollbar-thumb {
         width: 1px;
     }
 }

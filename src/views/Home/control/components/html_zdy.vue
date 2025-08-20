@@ -8,12 +8,12 @@
       <Panel position="top-left">
         <Space>
           <Dropdown v-for="item in flow.action.list">
-            <Button type="primary" size="small">{{ item.name }}</Button>
+            <Button type="primary" size="small" @click="item.onDown ? item.onDown(item) : null">{{ item.name }}</Button>
             <template #overlay v-if="item.children">
               <Menu class="!p-0">
                 <SubMenu v-for="item_ in item.children" :key="item_.name" :title="item_.name"
-                  @click="item_.onDown ? item_.onDown(item_) : null">
-                  <MenuItem class="!p-0" v-for="btn in item_.children" @click="btn.onDown ? btn.onDown(btn) : null">
+                  @click.stop="item_.onDown ? item_.onDown(item_) : null">
+                  <MenuItem class="!p-0" v-for="btn in item_.children" @click.stop="btn.onDown ? btn.onDown(btn) : null">
                   <Button type="primary" ghost size="small">{{ btn.name }}</Button>
                   </MenuItem>
                 </SubMenu>
@@ -26,8 +26,11 @@
       <template #node-dom="nodeProps">
         <NodeDom v-bind="nodeProps" />
       </template>
-      <template #node-downall="nodeProps">
-        <NodeDownAll v-bind="nodeProps" />
+      <template #node-TagAll="nodeProps">
+        <NodeTagAll v-bind="nodeProps" />
+      </template>
+      <template #node-View="nodeProps">
+        <NodeView v-bind="nodeProps" />
       </template>
     </VueFlow>
   </div>
@@ -39,8 +42,9 @@ import { Button, Dropdown, Menu, MenuItem, Space, SubMenu } from 'ant-design-vue
 import { Flow } from './zdy/script/Flow';
 import { Background } from '@vue-flow/background';
 import { Controls } from '@vue-flow/controls';
-import NodeDownAll from './zdy/NodeDownAll.vue';
 import NodeDom from './zdy/NodeDom.vue';
+import NodeTagAll from './zdy/NodeTagAll.vue';
+import NodeView from './zdy/NodeView.vue';
 const flow = new Flow(useVueFlow());
 const { nodeArr, edgedArr } = flow;
 </script>

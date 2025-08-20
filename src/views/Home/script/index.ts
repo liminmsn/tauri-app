@@ -3,7 +3,7 @@ import { reactive, ref } from "vue";
 
 export const current = ref<string[]>(['blueprint']);//左边默认选中栏
 export const value = ref<string>(''); //搜索框
-export const domData = ref('abcdef');//请求结果值
+export const domData = ref('');//请求结果值
 
 export function clear() {
     value.value = '';
