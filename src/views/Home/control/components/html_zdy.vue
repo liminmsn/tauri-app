@@ -8,8 +8,8 @@
       <Panel position="top-left">
         <Space>
           <Dropdown v-for="item in flow.action.list">
-            <Button type="primary" ghost size="small" @click="item.onDown ? item.onDown(item) : null">{{ item.name
-              }}</Button>
+            <Button type="primary" size="small" @click="item.onDown ? item.onDown(item) : null">{{ item.name
+            }}</Button>
             <template #overlay v-if="item.children">
               <Menu class="!p-0">
                 <SubMenu v-for="item_ in item.children" :key="item_.name" :title="item_.name"
@@ -34,6 +34,9 @@
       <template #node-View="nodeProps">
         <NodeView v-bind="nodeProps" />
       </template>
+      <template #node-ImageSave="nodeProps">
+        <NodeSaveImage v-bind="nodeProps" />
+      </template>
     </VueFlow>
   </div>
 </template>
@@ -47,6 +50,7 @@ import { Controls } from '@vue-flow/controls';
 import NodeDom from './zdy/NodeDom.vue';
 import NodeTagAll from './zdy/NodeTagAll.vue';
 import NodeView from './zdy/NodeView.vue';
+import NodeSaveImage from './zdy/NodeSaveImage.vue';
 const flow = new Flow(useVueFlow());
 const { nodeArr, edgedArr } = flow;
 </script>

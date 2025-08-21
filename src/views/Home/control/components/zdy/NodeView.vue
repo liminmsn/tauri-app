@@ -4,6 +4,8 @@ import { Handle, Position } from '@vue-flow/core';
 import type { NodeProps } from '@vue-flow/core';
 import { FNodeData } from './script/lib/core/FNode';
 import { Image, Segmented, Tag } from 'ant-design-vue';
+import { CopyFilled } from '@ant-design/icons-vue';
+import { CopyLabel } from '@/utility/Sys';
 
 const props = defineProps<NodeProps>()
 const { data } = props;
@@ -20,7 +22,10 @@ const value = ref(data_[0]);
         <Handle type="source" :position="Position.Right" />
         <Segmented v-model:value="value" :options="data_" />
         <div v-if="value === 'Text'">
-            <Tag class="mt-1" color="default" style="color: var(--VITE_THEME_ONE);" v-for="item in data['current']">{{ item }}</Tag>
+            <div v-for="item in data['current']" style="color: var(--VITE_THEME_ONE);" :key="item">
+                <CopyFilled style="cursor: pointer;" @click="CopyLabel(item)" />
+                <Tag class="mt-1 ml-1" color="default" style="color: var(--VITE_THEME_ONE);">{{ item }}</Tag>
+            </div>
         </div>
         <div v-else-if="value === 'Image'" class="grid grid-cols-6 mt-1" style="background: var(--VITE_THEME_ONE_BG);">
             <div v-for="item in data['current']">
@@ -53,22 +58,6 @@ const value = ref(data_[0]);
         color: white;
         padding-inline: 4px;
         background-color: rgb(0, 255, 89);
-    }
-}
-
-iframe {
-    max-width: 100px;
-    max-height: 100px;
-    border: none;
-
-    &::-webkit-scrollbar {
-        appearance: none;
-        width: 0;
-        height: 0;
-    }
-
-    &::-webkit-scrollbar-thumb {
-        width: 1px;
     }
 }
 </style>

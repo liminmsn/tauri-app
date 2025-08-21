@@ -45,7 +45,17 @@ export class Action {
                 name: '输出',
                 onDown: this._onDown,
                 children: [
-
+                    {
+                        id: '1-0',
+                        name: "保存",
+                        children: [
+                            {
+                                id: '1-0-0',
+                                name: "SaveImg",
+                                onDown: this._onDown.bind(this)
+                            }
+                        ]
+                    }
                 ],
             },
             {
@@ -69,6 +79,9 @@ export class Action {
         } else if (_args.id === '0-1-0') {
             const node_view = new FUNNode(Date.now().toString(), 'View')
             this.flow.addNode(node_view)
+        } else if (_args.id === '1-0-0') {
+            const node_image_save = new FUNNode('3', 'ImageSave')
+            this.flow.addNode(node_image_save);
         }
     }
 }

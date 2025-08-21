@@ -25,8 +25,8 @@ export class Flow {
         if (!this.vueFlow.findNode(node.id)) {
             const w = document.body.clientWidth;
             const h = document.body.clientHeight;
-            node.position.x = (Math.random() * w * 0.2) + (w * 0.05);
-            node.position.y = (Math.random() * h * 0.2) + (h * 0.05);
+            // node.position.x = (Math.random() * w * 0.2) + (w * 0.05);
+            // node.position.y = (Math.random() * h * 0.2) + (h * 0.05);
             this.vueFlow.addNodes(node);
         }
     }
@@ -55,6 +55,6 @@ export class Flow {
             id: 'e0>1',
             source: '0',
             target: '1'
-        })
+        });
     }
 }
