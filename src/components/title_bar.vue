@@ -1,7 +1,8 @@
 <template>
     <div class="flex p-1 pb-0">
         <Y_card class="max-w-40 min-w-40">
-            <img src="/icon/icon_0.png" style="height: 14pt;" class="" />
+            <!-- <img src="/icon/icon_0.png" style="height: 14pt;" class="" /> -->
+            <PartitionOutlined style="color: var(--VITE_THEME_ONE);" />
             <span class="pl-1" style="color: var(--VITE_THEME_ONE);line-height: 1.5;">{{ title }}</span>
         </Y_card>
         <Button class="shadow-md mx-1" size="small" shape="default">
@@ -36,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import { MinusOutlined, CloseOutlined, HistoryOutlined, ClearOutlined, SettingOutlined } from '@ant-design/icons-vue';
+import { MinusOutlined, CloseOutlined, HistoryOutlined, ClearOutlined, SettingOutlined, PartitionOutlined } from '@ant-design/icons-vue';
 import { Window } from '@tauri-apps/api/window';
 import { Button, Space, Switch } from 'ant-design-vue';
 import { ref } from 'vue';
