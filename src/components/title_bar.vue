@@ -1,6 +1,6 @@
 <template>
     <div class="flex p-1 pb-0">
-        <Y_card class="max-w-40">
+        <Y_card class="max-w-40 min-w-40">
             <img src="/icon/icon_0.png" style="height: 14pt;" class="" />
             <span class="pl-1" style="color: var(--VITE_THEME_ONE);line-height: 1.5;">{{ title }}</span>
         </Y_card>
@@ -12,7 +12,7 @@
         <Button class="shadow-md mr-1" size="small" shape="default" @click="clear">
             <ClearOutlined />
         </Button>
-        <div class="!w-full flex-1 shadow-md rounded-md w-100 max-w-110">
+        <div class="!w-full flex-1 shadow-md rounded-md max-w-110 min-w-90">
             <slot name="title_end_element" />
         </div>
         <Button class="shadow-md ml-1 flex items-center" size="small" shape="default">
@@ -23,7 +23,7 @@
                 <SettingOutlined />
             </Title_bar_setting>
         </Button>
-        <Y_card class="max-w-20 mx-1"></Y_card>
+        <Y_card class="mx-1"></Y_card>
         <Space class="justify-end title_bar_items" :size="2">
             <Button class="shadow-md" type="default" size="small" shape="default" @click="bnt_click(0)">
                 <MinusOutlined />
