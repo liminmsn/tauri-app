@@ -1,19 +1,21 @@
 <template>
   <div class="html_zdy">
     <VueFlow v-model:nodes="nodeArr" v-model:edges="edgedArr" :fit-view-on-init="true"
-      :connection-mode="ConnectionMode.Strict"
+      :connection-mode="ConnectionMode.Strict" :min-zoom="0.2" :max-zoom="2"
       @connect="(params) => flow.onConnect(params)" @edge-click="(edge) => flow.onEdgeClick(edge)">
       <Background color="var(--VITE_THEME_ONE)" />
       <Controls />
       <Panel position="top-left">
         <Space>
           <Dropdown v-for="item in flow.action.list">
-            <Button type="primary" ghost size="small" @click="item.onDown ? item.onDown(item) : null">{{ item.name }}</Button>
+            <Button type="primary" ghost size="small" @click="item.onDown ? item.onDown(item) : null">{{ item.name
+              }}</Button>
             <template #overlay v-if="item.children">
               <Menu class="!p-0">
                 <SubMenu v-for="item_ in item.children" :key="item_.name" :title="item_.name"
                   @click.stop="item_.onDown ? item_.onDown(item_) : null">
-                  <MenuItem class="!p-0" v-for="btn in item_.children" @click.stop="btn.onDown ? btn.onDown(btn) : null">
+                  <MenuItem class="!p-0" v-for="btn in item_.children"
+                    @click.stop="btn.onDown ? btn.onDown(btn) : null">
                   <Button type="primary" ghost size="small">{{ btn.name }}</Button>
                   </MenuItem>
                 </SubMenu>
