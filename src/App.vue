@@ -9,15 +9,6 @@
 
 <script setup lang="ts">
 import { App, ConfigProvider } from 'ant-design-vue';
+import { theme_main } from './theme';
 import TitleBar from './components/TitleBar.vue';
-import { init_theme, theme_main } from './theme';
-import { onMounted } from 'vue';
-
-onMounted(() => {
-  init_theme()
-})
 </script>
-
-<style>
-
-</style>
