@@ -11,4 +11,8 @@ export abstract class FNode<T> {
     type: string = 'default';
     id: string = Date.now().toString();
     abstract data: FNodeData<T | any>;
+    public setPosition(pos: { x: number, y: number }) {
+        this.position = pos;
+        return this;
+    }
 }

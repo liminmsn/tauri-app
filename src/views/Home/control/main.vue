@@ -1,5 +1,5 @@
 <template>
-    <Card class="main flex-1 ml-1 shadow-md overflow-auto" id="main">
+    <Card class="main flex-1 shadow-md overflow-auto" id="main">
         <a-watermark class="h-full" :content="water_mark">
             <div class="text-center" v-if="isLod">
                 <a-spin class="mt-50" />

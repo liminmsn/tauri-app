@@ -22,7 +22,7 @@ export class Action {
                         children: [
                             {
                                 id: '0-0-0',
-                                name: "所有元素属性列表",
+                                name: "TagAll",
                                 onDown: this._onDown.bind(this)
                             }
                         ]
@@ -33,7 +33,7 @@ export class Action {
                         children: [
                             {
                                 id: '0-1-0',
-                                name: "Text",
+                                name: "View",
                                 onDown: this._onDown.bind(this)
                             }
                         ]
@@ -65,10 +65,10 @@ export class Action {
             });
         } else if (_args.id === '0-0-0') {
             const node_tag = new FUNNode('1', 'TagAll')
-            this.flow.vueFlow.addNodes(node_tag)
+            this.flow.addNode(node_tag)
         } else if (_args.id === '0-1-0') {
-            const node_view = new FUNNode('2', 'View')
-            this.flow.vueFlow.addNodes(node_view)
+            const node_view = new FUNNode(Date.now().toString(), 'View')
+            this.flow.addNode(node_view)
         }
     }
 }

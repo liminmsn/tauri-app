@@ -4,8 +4,6 @@ import type { Node, NodeProps } from '@vue-flow/core';
 const props = defineProps<NodeProps>()
 
 const isValidTargetConnection = (connection: { target: string | Node<any, any, string>[]; }) => {
-    // console.count();
-    // console.log(connection)
     return !false
 }
 </script>
@@ -13,7 +11,9 @@ const isValidTargetConnection = (connection: { target: string | Node<any, any, s
 <template>
     <div class="dom-node" :data-type="props.type">
         <Handle type="source" :position="Position.Right" :is-valid-connection="isValidTargetConnection" />
-        <iframe style="" :srcdoc="props.data.raw"></iframe>
+         <div class="w-40 h-40 overflow-auto" style="font-size: 4pt;color: var(--VITE_THEME_ONE);">
+            {{ props.data }}
+         </div>
     </div>
 </template>
 

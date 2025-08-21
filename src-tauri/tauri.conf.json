@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "网页数据抓取工具",
+        "title": "蓝图DOM",
         "decorations": false,
         "transparent": true,
         "resizable": false,

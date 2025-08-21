@@ -11,9 +11,9 @@ import { Card, Menu, MenuProps } from 'ant-design-vue';
 import { current } from '../script/index';
 const items = ref<MenuProps['items']>([
     {
-        key: 'text',
-        label: '.text',
-        icon: () => h(FileTextFilled),
+        key: 'blueprint',
+        label: 'BP',
+        icon: () => h(ApartmentOutlined),
     },
     {
         key: 'html',
@@ -26,10 +26,10 @@ const items = ref<MenuProps['items']>([
         icon: () => h(FileImageOutlined),
     },
     {
-        key: 'blueprint',
-        label: 'BP',
-        icon: () => h(ApartmentOutlined),
-    }
+        key: 'text',
+        label: '.text',
+        icon: () => h(FileTextFilled),
+    },
 ]);
 </script>
 

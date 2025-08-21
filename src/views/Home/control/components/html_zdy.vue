@@ -1,7 +1,7 @@
 <template>
   <div class="html_zdy">
     <VueFlow v-model:nodes="nodeArr" v-model:edges="edgedArr" :fit-view-on-init="true"
-      :connection-mode="ConnectionMode.Strict" :connection-line-style="{ stroke: '#000' }"
+      :connection-mode="ConnectionMode.Strict"
       @connect="(params) => flow.onConnect(params)" @edge-click="(edge) => flow.onEdgeClick(edge)">
       <Background color="var(--VITE_THEME_ONE)" />
       <Controls />
@@ -23,7 +23,7 @@
         </Space>
       </Panel>
 
-      <template #node-dom="nodeProps">
+      <template #node-Dom="nodeProps">
         <NodeDom v-bind="nodeProps" />
       </template>
       <template #node-TagAll="nodeProps">

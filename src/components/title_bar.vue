@@ -15,6 +15,9 @@
         <div class="!w-full flex-1 shadow-md rounded-md w-100 max-w-110">
             <slot name="title_end_element" />
         </div>
+        <Button class="shadow-md ml-1 flex items-center" size="small" shape="default">
+            <Switch size="small" v-model:checked="showLeft" />
+        </Button>
         <Button class="shadow-md ml-1" size="small" shape="default">
             <Title_bar_setting>
                 <SettingOutlined />
@@ -25,10 +28,6 @@
             <Button class="shadow-md" type="default" size="small" shape="default" @click="bnt_click(0)">
                 <MinusOutlined />
             </Button>
-            <!-- <Button class="shadow-md" type="default" size="small" shape="default" @click="bnt_click(1)">
-                <FullscreenOutlined v-if="isFullScreen" />
-                <FullscreenExitOutlined v-else />
-            </Button> -->
             <Button class="shadow-md" type="primary" size="small" shape="default" @click="bnt_click(2)">
                 <CloseOutlined />
             </Button>
@@ -39,11 +38,11 @@
 <script setup lang="ts">
 import { MinusOutlined, CloseOutlined, HistoryOutlined, ClearOutlined, SettingOutlined } from '@ant-design/icons-vue';
 import { Window } from '@tauri-apps/api/window';
-import { Button, Space } from 'ant-design-vue';
+import { Button, Space, Switch } from 'ant-design-vue';
 import { ref } from 'vue';
 import Y_card from './y_card.vue';
 import Title_bar_history from './title_bar_history.vue';
-import { clear } from '@/views/Home/script';
+import { clear, showLeft } from '@/views/Home/script';
 import Title_bar_setting from './title_bar_setting.vue';
 const title = import.meta.env['VITE_TITLE'];
 
