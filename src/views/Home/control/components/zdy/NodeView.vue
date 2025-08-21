@@ -27,7 +27,7 @@ const value = ref(data_[0]);
                 <Tag class="mt-1 ml-1" color="default" style="color: var(--VITE_THEME_ONE);">{{ item }}</Tag>
             </div>
         </div>
-        <div v-else-if="value === 'Image'" class="grid grid-cols-6 mt-1" style="background: var(--VITE_THEME_ONE_BG);">
+        <div v-else-if="value === 'Image'" class="grid grid-cols-6 mt-1 shadow-md rounded-md overflow-hidden" style="background: var(--VITE_THEME_ONE_BG);">
             <div v-for="item in data['current']">
                 <Image :src="item" />
             </div>

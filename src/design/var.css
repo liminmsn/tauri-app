@@ -5,6 +5,11 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
 
+    ::selection{
+        /* color: var(--VITE_THEME_ONE); */
+        background-color: var(--VITE_THEME_ONE);
+    }
+
     ::-webkit-scrollbar {
         appearance: none;
         display: none;
