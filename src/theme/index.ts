@@ -6,7 +6,7 @@ import { ColorOpacity } from "@/util/util";
 export const theme_main: ThemeConfig = reactive({
     algorithm: theme.defaultAlgorithm,
     token: {
-        borderRadius: 4
+        // borderRadius: 4
     },
 })
 /**初始化主题 */
