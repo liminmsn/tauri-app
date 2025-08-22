@@ -8,7 +8,7 @@
         </Card>
         <div class="px-1 title_bar_items">
             <TitleSetting>
-                <Button type="default" size="small" :icon="h(SettingFilled)"></Button>
+                <Button type="default" size="small" :icon="h(SettingOutlined)"></Button>
             </TitleSetting>
         </div>
         <Card class="w-20 mr-1"></Card>
@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { MinusOutlined, SettingFilled, CloseOutlined, CodeSandboxCircleFilled } from '@ant-design/icons-vue';
+import { MinusOutlined, CloseOutlined, CodeSandboxCircleFilled, SettingOutlined } from '@ant-design/icons-vue';
 import { Window } from '@tauri-apps/api/window';
 import { Button, Card } from 'ant-design-vue';
 import { h, onMounted, ref } from 'vue';
