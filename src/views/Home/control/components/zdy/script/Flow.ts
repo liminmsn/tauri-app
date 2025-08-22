@@ -23,8 +23,8 @@ export class Flow {
     }
     addNode(node: FNode<any>) {
         if (!this.vueFlow.findNode(node.id)) {
-            const w = document.body.clientWidth;
-            const h = document.body.clientHeight;
+            // const w = document.body.clientWidth;
+            // const h = document.body.clientHeight;
             // node.position.x = (Math.random() * w * 0.2) + (w * 0.05);
             // node.position.y = (Math.random() * h * 0.2) + (h * 0.05);
             this.vueFlow.addNodes(node);

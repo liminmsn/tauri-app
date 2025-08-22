@@ -3,7 +3,7 @@ import { Handle, Position } from '@vue-flow/core';
 import type { Node, NodeProps } from '@vue-flow/core';
 const props = defineProps<NodeProps>()
 
-const isValidTargetConnection = (connection: { target: string | Node<any, any, string>[]; }) => {
+const isValidTargetConnection = (_connection: { target: string | Node<any, any, string>[]; }) => {
     return !false
 }
 </script>
