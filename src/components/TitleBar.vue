@@ -1,8 +1,10 @@
 <template>
     <div class="title_bar flex pt-1 px-1">
-        <Card class="flex-1 w-40 pl-2">
-            
-            <span style="color: var(--THEME_COLOR);">{{ title }}</span>
+        <Card class="flex-1 w-40 pl-1">
+            <div class="flex items-center">
+                <CodeSandboxCircleFilled style="color: var(--THEME_COLOR);font-size: 14pt;" />
+                <span class="ml-1" style="color: var(--THEME_COLOR);">{{ title }}</span>
+            </div>
         </Card>
         <div class="px-1 title_bar_items">
             <TitleSetting>
@@ -22,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import { MinusOutlined, SettingFilled, CloseOutlined } from '@ant-design/icons-vue';
+import { MinusOutlined, SettingFilled, CloseOutlined, CodeSandboxCircleFilled } from '@ant-design/icons-vue';
 import { Window } from '@tauri-apps/api/window';
 import { Button, Card } from 'ant-design-vue';
 import { h, onMounted, ref } from 'vue';
