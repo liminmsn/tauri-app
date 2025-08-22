@@ -1,4 +1,4 @@
-import { createWebHashHistory, createRouter, RouteRecordRaw } from "vue-router";
+import { createWebHashHistory, createRouter, RouteRecordRaw} from "vue-router";
 
 const routes: RouteRecordRaw[] = [
     {
@@ -10,7 +10,7 @@ const routes: RouteRecordRaw[] = [
 
 const router = createRouter({
     history: createWebHashHistory(),
-    routes,
+    routes
 })
 
 export default router;
