@@ -1,7 +1,10 @@
 <template>
     <div class="title_bar flex pt-1 px-1">
-        <div class="w-100 flex-1">{{ title }}</div>
-        <div class="px-1">
+        <Card class="flex-1 w-40 pl-2">
+            
+            <span style="color: var(--THEME_COLOR);">{{ title }}</span>
+        </Card>
+        <div class="px-1 title_bar_items">
             <TitleSetting>
                 <Button type="default" size="small" :icon="h(SettingFilled)"></Button>
             </TitleSetting>
