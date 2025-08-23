@@ -11,14 +11,14 @@ export const theme_main: ThemeConfig = reactive({
 })
 /**初始化主题 */
 export function theme_init() {
+    const theme_color_arr = JSON.parse(import.meta.env['VITE_THEME_COLOR']);
+    localStorage.setItem('theme_color_arr', JSON.stringify(theme_color_arr));
     //主题色
     const theme_color = localStorage.getItem('theme_color');
     if (theme_color) {
         SetThemeColor(theme_color);
     } else {
         try {
-            const theme_color_arr = JSON.parse(import.meta.env['VITE_THEME_COLOR']);
-            localStorage.setItem('theme_color_arr', JSON.stringify(theme_color_arr));
             SetThemeColor(theme_color_arr[0]);
         } catch (error) {
             alert(error);

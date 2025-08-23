@@ -1,6 +1,7 @@
 <template>
   <a-dropdown :trigger="['contextmenu']">
     <main class="p1 w-full flex" style="height: calc(100% - 28px);">
+      <Shell />
     </main>
     <template #overlay>
       <a-menu>
@@ -13,5 +14,7 @@
 </template>
 
 <script setup lang="ts">
+import { Button, Card } from 'ant-design-vue';
+import Shell from './views/Shell.vue';
 </script>
 <style scoped></style>
