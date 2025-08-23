@@ -34,7 +34,7 @@ import { theme } from "ant-design-vue";
 import { ref } from 'vue';
 const theme_color_arr: string[] = JSON.parse(localStorage.getItem('theme_color_arr') ?? '[]');
 const color_val = ref('');
-const dark = ref(false);
+const dark = ref(localStorage.getItem('theme_dark') === 'true' ? true : false);
 function ToggleDark(dark: any) {
     theme_main.algorithm = dark ? theme.darkAlgorithm : theme.defaultAlgorithm;
     localStorage.setItem('theme_dark', String(dark));
