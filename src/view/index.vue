@@ -4,17 +4,17 @@
       <Shell />
     </main>
     <template #overlay>
-      <a-menu>
-        <a-menu-item key="1">1st menu item</a-menu-item>
-        <a-menu-item key="2">2nd menu item</a-menu-item>
-        <a-menu-item key="3">3rd menu item</a-menu-item>
-      </a-menu>
+      <Menu>
+        <MenuItem key="1">1st menu item</MenuItem>
+        <MenuItem key="2">2nd menu item</MenuItem>
+        <MenuItem key="3">3rd menu item</MenuItem>
+      </Menu>
     </template>
   </a-dropdown>
 </template>
 
 <script setup lang="ts">
-import { Button, Card } from 'ant-design-vue';
+import { Menu, MenuItem } from 'ant-design-vue';
 import Shell from './views/Shell.vue';
 </script>
 <style scoped></style>
